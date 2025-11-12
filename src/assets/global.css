@@ -1,0 +1,10 @@
+@import './variables.css';
+@import './normalize.css';
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('./fonts/SourceSans3-VariableFont_wght.woff2') format('woff2-variations');
+}

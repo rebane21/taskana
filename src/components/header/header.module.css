@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px 12px 16px;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.2);
+
+  width: 100%;
+  min-width: 1280px;
+  min-height: 40px;
+  height: fit-content;
+
+
+  background-color: var(--base-black);;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}

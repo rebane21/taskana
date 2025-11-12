@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Упрощенный reset для основных элементов */
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  min-width: 1280px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Современный подход - reset только для часто используемых элементов */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+/* Убираем стандартные стили списков */
+ul, ol {
+  list-style: none;
+}
+
+/* Убираем подчеркивание ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Убираем стандартные стили кнопок */
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Убираем стандартные стили input */
+input, textarea, select {
+  border: none;
+  background: none;
+  font: inherit;
+  outline: none;
+}
+
+/* Убираем стандартные стили для изображений */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Убираем стандартные стили таблиц */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* HTML5 elements display block */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}

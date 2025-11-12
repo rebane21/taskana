@@ -1,0 +1,16 @@
+.mainContainer{
+   display: flex;
+  flex-direction: column;
+    flex: 1;
+  min-width: 0;
+  
+  display: flex;
+  justify-content: center;
+}
+
+.tasksTitle{
+display: flex;
+justify-content: center;
+padding: 24px;
+font-size: 24px ;
+}

@@ -1,0 +1,16 @@
+.navBar {
+  display: flex;
+  flex-direction: column;
+  width: 204px;
+  height: 510px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--neutral-300);
+
+  padding: 24px 16px;
+  gap: 24px;
+  background-color: var(--neutral-100);
+  overflow-y: auto;
+  align-items: center;
+  text-align: center;
+   margin-right: auto;
+}
