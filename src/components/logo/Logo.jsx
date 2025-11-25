@@ -1,8 +1,8 @@
-const Logo = ({children}) => {
+const Logo = () => {
   return (
-    <>
-      {children}
-    </>
-  )
-}
-export default Logo
+    <img src="./Vector.svg" 
+      alt="logo"
+    />
+  ) 
+};
+export default Logo;

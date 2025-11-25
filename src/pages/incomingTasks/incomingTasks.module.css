@@ -1,16 +1,7 @@
-.mainContainer{
-   display: flex;
-  flex-direction: column;
-    flex: 1;
-  min-width: 0;
-  
+.incomingTasks__container {
   display: flex;
-  justify-content: center;
-}
-
-.tasksTitle{
-display: flex;
-justify-content: center;
-padding: 24px;
-font-size: 24px ;
+  flex-direction: column;
+  min-width: 676px;
+  flex: 1;
+  height: 100%;
 }

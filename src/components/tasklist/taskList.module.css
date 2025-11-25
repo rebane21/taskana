@@ -1,10 +1,18 @@
 .taskList {
   display: flex;
-  font-size: 18px;
-  padding: 24px;
-  gap: 24px;
-  overflow-y: auto;
+  flex-direction: column;
+  padding: 0 24px 24px 24px;
+  gap: 40px;
+  flex: 1;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.subtitle {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 628px;
+  flex-shrink: 0;
+  height: 72px;
 }

@@ -1,25 +1,104 @@
 :root {
-  /* Neutral/Light color palette */
-  --neutral-0: #FFFFFF;
-  --neutral-100: #FBFBFB;
-  --neutral-200: #F3F3F3;
-  --neutral-300: #ECECEC;
-  --neutral-400: #BFBFBF;
-  --neutral-500: #8C8C8C;
-  --neutral-600: #6C6C6C;
+  --neutral-0: #ffffff;
+  --neutral-100: #fbfbfb;
+  --neutral-200: #f3f3f3;
+  --neutral-300: #ececec;
+  --neutral-400: #bfbfbf;
+  --neutral-500: #8c8c8c;
+  --neutral-600: #6c6c6c;
   --neutral-700: #393939;
-  --neutral-800: #1C1C1C;
+  --neutral-800: #1c1c1c;
   --neutral-900: #141414;
 
-  /* Primary color palette */
-  --primary-0: #FFF4F4;
-  --primary-100: #FFCECE;
-  --primary-200: #FCABA9;
-  --primary-300: #F25959;
-  --primary-400: #D51010;
-  --primary-500: #A60C0C;
+  --primary-0: #fff4f4;
+  --primary-100: #ffcece;
+  --primary-200: #fcaba9;
+  --primary-300: #f25959;
+  --primary-400: #d51010;
+  --primary-500: #a60c0c;
   --primary-600: #760909;
 
-  /* Base colors */
+  --primary-400-500: linear-gradient(
+    to bottom,
+    var(--color-primary-400),
+    var(--color-primary-500)
+  );
+
   --base-black: #000000;
+
+  --font-regular: 400;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  --font-size-sm: 0.875rem;
+  --line-height-sm: 1.25rem;
+
+  --font-size-md: 1rem;
+  --line-height-md: 1.5rem;
+
+  --font-size-lg: 1.125rem;
+  --line-height-lg: 1.5rem;
+
+  --font-size-xlg: 1.5rem;
+  --line-height-xlg: 2rem;
+
 }
+.heading_h1{
+  font-weight: var(--font-bold);
+  font-size: 2rem;
+  line-height: 2.5rem;
+  }
+
+  .heading_h2{
+  font-weight: var(--font-bold);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  }
+
+  .heading_h3{
+  font-weight: var(--font-bold);
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  }
+
+  .body__lg_semibold{
+  font-weight: var(--font-semibold);
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  }
+
+  .body__lg_regular{
+  font-weight: var(--font-regular);
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  }
+
+ .body__md_bold{
+  font-weight: var(--font-bold);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  }
+
+   .body__md_semibold{
+  font-weight: var(--font-semibold);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  }
+
+  .body__md_regular{
+  font-weight: var(--font-regular);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  }
+
+  .body__sm_semibold{
+  font-weight: var(--font-semibold);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  }
+
+  .body__sm_regular{
+  font-weight: var(--font-regular);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  }

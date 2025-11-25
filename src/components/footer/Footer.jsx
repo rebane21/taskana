@@ -1,11 +1,12 @@
 import styles from './footer.module.css';
 const Footer = () => {
-  return(
+  return (
     <footer className={styles.footerContent}>
-      <p className={styles.footerText}>
-        Проект выполнен в рамках стажировки PREAX
+      <p className=' body__md_regular'>
+        Проект выполнен в рамках стажировки{'\u00A0'}
+        <a href="https://preax.ru/">PREAX</a>
       </p>
     </footer>
-  )
-}
-export default Footer
+  );
+};
+export default Footer;

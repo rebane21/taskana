@@ -1,0 +1,11 @@
+.statistic {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: var(--neutral-800);
+}
