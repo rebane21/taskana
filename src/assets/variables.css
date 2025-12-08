@@ -1,15 +1,32 @@
 :root {
-  --neutral-0: #ffffff;
-  --neutral-100: #fbfbfb;
-  --neutral-200: #f3f3f3;
-  --neutral-300: #ececec;
-  --neutral-400: #bfbfbf;
-  --neutral-500: #8c8c8c;
-  --neutral-600: #6c6c6c;
-  --neutral-700: #393939;
-  --neutral-800: #1c1c1c;
-  --neutral-900: #141414;
+  /* Основные нейтральные цвета */
+  --light-neutral-0: #ffffff;
+  --light-neutral-100: #fbfbfb;
+  --light-neutral-200: #f3f3f3;
+  --light-neutral-300: #ececec;
+  --light-neutral-400: #bfbfbf;
+  --light-neutral-500: #8c8c8c;
+  --light-neutral-600: #6c6c6c;
+  --light-neutral-700: #393939;
+  --light-neutral-800: #1c1c1c;
+  --light-neutral-900: #141414;
 
+  --color-bg-primary: var(--light-neutral-0);
+  --color-bg-layout: var(--light-neutral-100);
+  --color-bg-secondary: var(--light-neutral-200);
+  --color-bg-hover-secondary: var(--light-neutral-300);
+  --color-border-default: var(--light-neutral-400);
+  --color-icon-default: var(--light-neutral-500);
+  --color-text-secondary: var(--light-neutral-600);
+  --color-bg-hover-primary: var(--light-neutral-700);
+  --color-text-primary: var(--light-neutral-800);
+  --color-bg-inverted: var(--light-neutral-900);
+
+  --color-hover-list: var(--light-neutral-200);
+  --color-hover-border: var(--light-neutral-600);
+  --color-text-inverted: var(--light-neutral-0);
+
+  /* Primary */
   --primary-0: #fff4f4;
   --primary-100: #ffcece;
   --primary-200: #fcaba9;
@@ -18,87 +35,116 @@
   --primary-500: #a60c0c;
   --primary-600: #760909;
 
-  --primary-400-500: linear-gradient(
-    to bottom,
-    var(--color-primary-400),
-    var(--color-primary-500)
-  );
+  --primary-400-500: linear-gradient(to bottom, var(--color-primary-400), var(--color-primary-500));
 
+  /* Base */
+  --base-white: #ffffff;
+  --base-600: #6c6c6c;
+  --base-800: #262626;
+  --base-900: #141414;
   --base-black: #000000;
 
+  /* Shadows */
+  --light-base-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  --light-base-hover: 0px 8px 12px 0px rgba(0, 0, 0, 0.25);
+  --light-sm-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  --light-sm-hover: 0px 8px 12px 0px rgba(0, 0, 0, 0.2);
+
+  --dark-base-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  --dark-base-hover: 0px 8px 12px 0px rgba(0, 0, 0, 0.8);
+  --dark-sm-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+  --dark-sm-hover: 0px 8px 12px 0px rgba(0, 0, 0, 0.6);
+
+  /* Typography */
   --font-regular: 400;
   --font-semibold: 600;
   --font-bold: 700;
-
-  --font-size-sm: 0.875rem;
-  --line-height-sm: 1.25rem;
-
-  --font-size-md: 1rem;
-  --line-height-md: 1.5rem;
-
-  --font-size-lg: 1.125rem;
-  --line-height-lg: 1.5rem;
-
-  --font-size-xlg: 1.5rem;
-  --line-height-xlg: 2rem;
-
 }
-.heading_h1{
+
+.dark {
+  /* нейтральные цвета для темной темы */
+  --dark-neutral-0: #141414;
+  --dark-neutral-100: #1c1c1c;
+  --dark-neutral-200: #262626;
+  --dark-neutral-300: #333333;
+  --dark-neutral-400: #6c6c6c;
+  --dark-neutral-500: #8c8c8c;
+  --dark-neutral-600: #bfbfbf;
+  --dark-neutral-700: #ececec;
+  --dark-neutral-800: #fbfbfb;
+  --dark-neutral-900: #ffffff;
+
+  --color-bg-primary: var(--dark-neutral-0);
+  --color-bg-layout: var(--dark-neutral-100);
+  --color-bg-secondary: var(--dark-neutral-200);
+  --color-bg-hover-secondary: var(--dark-neutral-300);
+  --color-border-default: var(--dark-neutral-400);
+  --color-icon-default: var(--dark-neutral-500);
+  --color-text-secondary: var(--dark-neutral-600);
+  --color-bg-hover-primary: var(--dark-neutral-700);
+  --color-text-primary: var(--dark-neutral-800);
+  --color-bg-inverted: var(--dark-neutral-900);
+
+  --color-hover-list: var(--dark-neutral-200);
+  --color-hover-border: var(--dark-neutral-600);
+  --color-text-inverted: var(--dark-neutral-0);
+}
+.heading_h1 {
   font-weight: var(--font-bold);
   font-size: 2rem;
   line-height: 2.5rem;
-  }
+}
 
-  .heading_h2{
+.heading_h2 {
   font-weight: var(--font-bold);
   font-size: 1.5rem;
   line-height: 2rem;
-  }
+}
 
-  .heading_h3{
+.heading_h3 {
   font-weight: var(--font-bold);
   font-size: 1.125rem;
   line-height: 1.5rem;
-  }
+}
 
-  .body__lg_semibold{
+.body__lg_semibold {
   font-weight: var(--font-semibold);
   font-size: 1.125rem;
   line-height: 1.5rem;
-  }
+}
 
-  .body__lg_regular{
+.body__lg_regular {
   font-weight: var(--font-regular);
   font-size: 1.125rem;
   line-height: 1.5rem;
-  }
+}
 
- .body__md_bold{
+.body__md_bold {
   font-weight: var(--font-bold);
   font-size: 1rem;
   line-height: 1.5rem;
-  }
+}
 
-   .body__md_semibold{
+.body__md_semibold {
   font-weight: var(--font-semibold);
   font-size: 1rem;
   line-height: 1.5rem;
-  }
+}
 
-  .body__md_regular{
+.body__md_regular {
   font-weight: var(--font-regular);
   font-size: 1rem;
   line-height: 1.5rem;
-  }
+}
 
-  .body__sm_semibold{
+.body__sm_semibold {
   font-weight: var(--font-semibold);
   font-size: 0.875rem;
   line-height: 1.25rem;
-  }
+}
 
-  .body__sm_regular{
+.body__sm_regular {
   font-weight: var(--font-regular);
   font-size: 0.875rem;
   line-height: 1.25rem;
-  }
+}

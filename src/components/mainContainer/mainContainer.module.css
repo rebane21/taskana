@@ -4,6 +4,7 @@
   min-width: 676px;
   height: 100%;
   overflow-y: auto;
+  background-color: var(--color-bg-primary);
 }
 
 .tasksTitle {
@@ -12,7 +13,7 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  background: white;
+  background: var(--color-bg-primary);
   width: 100%;
 
   padding: 24px;
@@ -20,8 +21,9 @@
   width: 100%;
   height: auto;
   min-height: 88px;
-  
+
   font-size: 32px;
   font-weight: 700;
   line-height: 40px;
+  color: var(--color-text-primary);
 }

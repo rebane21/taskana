@@ -16,7 +16,6 @@
 .button.variant-primary {
   background-color: var(--primary-400);
   color: white;
-
   width: fit-content;
   height: fit-content;
   min-height: 40px;
@@ -27,12 +26,11 @@
 
 .button.variant-primary:hover:not(:disabled) {
   background-color: var(--primary-500);
-  border-color: var(--primary-500);
 }
 
 .button.variant-nav {
-  background-color: var(--neutral-800);
-  color: white;
+  background-color: var(--color-text-primary);
+  color: var(--color-text-inverted);
   justify-content: start;
 
   width: 100%;
@@ -43,6 +41,19 @@
 }
 
 .button.variant-nav:hover:not(:disabled) {
-  background-color: var(--neutral-700);
-  border-color: var(--neutral-700);
+  background-color: var(--color-bg-hover-primary);
+  border-color: var(--color-bg-hover-primary);
+}
+
+.button.variant-secondary {
+  background-color: var(--base-800);
+  color: var(--base-white);
+  justify-content: start;
+
+  width: 100%;
+  max-width: 76px;
+  height: fit-content;
+  min-height: 40px;
+  padding: 4px;
+  gap: 4px;
 }

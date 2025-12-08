@@ -4,7 +4,7 @@ import styles from './incomingTasks.module.css';
 
 const IncomingTasks = () => {
   return (
-    <section className={styles.incomingTasks__container}>
+    <section className={styles.incomingTasksContainer}>
       <MainContainer />
       <Footer />
     </section>

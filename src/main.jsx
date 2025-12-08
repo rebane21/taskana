@@ -6,5 +6,5 @@ import AppLayout from './layouts/AppLayout';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AppLayout />
-  </StrictMode>
+  </StrictMode>,
 );

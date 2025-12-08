@@ -26,10 +26,6 @@ const Button = ({
   );
 };
 
-Button.Icon = ({ src, width = 18, height = 18, ...props }) => (
-  <img src={src} width={width} height={height} className={styles.icon} {...props} />
-);
-
 Button.Text = ({ children, className = '', ...props }) => (
   <span className={clsx('body__md_semibold', className)} {...props}>
     {children}

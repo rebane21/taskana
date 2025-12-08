@@ -12,9 +12,17 @@
   z-index: 1000;
 }
 
-.btn_text{
+.btn_text {
   font-weight: var(--font-semibold);
   font-size: var(--font-size-md);
   line-height: var(--line-height-lg);
   width: 58px;
+}
+
+.headerActions {
+  display: flex;
+  flex-direction: row;
+  width: 218px;
+  height: 40px;
+  gap: 24px;
 }

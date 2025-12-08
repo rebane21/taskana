@@ -1,12 +1,13 @@
+import Illustration from '../illustration';
 import styles from './statistic.module.css';
 
 const Statistic = () => {
   return (
     <section className={styles.statistic}>
-      <img src="/Notebook.svg" alt="side bar img" />
-      <p className='body__md_regular'>
-        Здесь мы поможем тебе управлять твоими задачами, отслеживать статистику <br />
-        и самочувствие.
+      <Illustration name="Notebook" alt="side bar img" width="233" height="168" />
+      <p className="body__md_regular">
+        Здесь мы поможем тебе управлять твоими задачами, отслеживать статистику <br />и
+        самочувствие.
       </p>
     </section>
   );

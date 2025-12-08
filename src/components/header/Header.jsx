@@ -1,5 +1,7 @@
 import Button from '../button/Button';
+import Icon from '../icon/Icon';
 import Logo from '../logo/Logo';
+import { ThemeSwitcher } from '../theme/themeSwither/ThemeSwitcher';
 import styles from './header.module.css';
 const Header = () => {
   return (
@@ -7,10 +9,13 @@ const Header = () => {
       <a href="#">
         <Logo />
       </a>
-      <Button>
-        <Button.Icon src="./Plus-btn.svg" style={{ margin: '3px' }} />
-        <Button.Text>Создать</Button.Text>
-      </Button>
+      <div className={styles.headerActions}>
+        <Button>
+          <Icon name="PlusIcon" showWrapper={true} />
+          <Button.Text>Создать</Button.Text>
+        </Button>
+        <ThemeSwitcher />
+      </div>
     </header>
   );
 };

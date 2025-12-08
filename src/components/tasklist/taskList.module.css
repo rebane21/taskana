@@ -15,4 +15,5 @@
   max-width: 628px;
   flex-shrink: 0;
   height: 72px;
+  color: var(--color-text-primary);
 }

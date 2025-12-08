@@ -4,16 +4,17 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   min-height: 100vh;
   min-width: 1280px;
-  font-family: 'Source Sans 3';
+  font-family: 'Source Sans 3', sans-serif;
   font-weight: var(--font-regular);
-  letter-spacing: 0%;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -28,7 +29,9 @@ button {
   cursor: pointer;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   border: none;
   background: none;
   font: inherit;
@@ -45,7 +48,16 @@ table {
   border-spacing: 0;
 }
 
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
