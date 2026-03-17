@@ -1,11 +1,13 @@
 import styles from './button.module.css';
-import { clsx } from '../utils/clsx.js';
+import { clsx } from '../../utils/clsx.js';
+import Icon from '../icon/Icon';
 
 const Button = ({
   children,
   variant = 'primary',
   size = 'medium',
   disabled = false,
+  loading = false,
   className = '',
   ...props
 }) => {
@@ -16,12 +18,13 @@ const Button = ({
         styles.button,
         styles[`variant-${variant}`],
         styles[`size-${size}`],
-        className
+        loading && styles.loading,
+        className,
       )}
-      disabled={disabled}
+      disabled={disabled || loading}
       {...props}
     >
-      {children}
+      {loading ? <Icon name="Loading" className={styles.spinIcon} /> : children}
     </button>
   );
 };

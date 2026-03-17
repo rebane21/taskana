@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconWrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.icon {
+  transition: all 0.2s ease;
+  color: var(--base-600);
+}
+
+.themeSwitcher .iconWrapper:first-child.active {
+  background-color: var(--primary-400);
+  box-shadow: var(--dark-base-default);
+}
+
+.themeSwitcher .iconWrapper:first-child.active .icon {
+  color: var(--base-white);
+}
+
+.themeSwitcher .iconWrapper:last-child.active {
+  background-color: var(--primary-400);
+  box-shadow: var(--dark-base-default);
+}
+
+.themeSwitcher .iconWrapper:last-child.active .icon {
+  color:var(--base-white);
+}
+
+.themeSwitcher .iconWrapper:first-child.active:hover,
+.themeSwitcher:focus-visible .iconWrapper:first-child.active,
+.themeSwitcher .iconWrapper:last-child.active:hover,
+.themeSwitcher:focus-visible .iconWrapper:last-child.active {
+  background-color: var(--base-white);
+  transition: all 0.2s ease;
+}
+
+.themeSwitcher .iconWrapper:first-child.active:hover .icon,
+.themeSwitcher:focus-visible .iconWrapper:first-child.active .icon,
+.themeSwitcher .iconWrapper:last-child.active:hover .icon,
+.themeSwitcher:focus-visible .iconWrapper:last-child.active .icon {
+  color: var(--base-black);
+}
+

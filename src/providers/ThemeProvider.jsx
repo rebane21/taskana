@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ThemeContext } from '../themeContext';
+import { ThemeContext } from '../context/themeContext';
 
 const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(() => {
@@ -8,11 +8,7 @@ const ThemeProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
     localStorage.setItem('theme', JSON.stringify(isDark));
   }, [isDark]);
 

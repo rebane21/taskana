@@ -1,0 +1,54 @@
+@import './variables.css';
+@import './normalize.css';
+
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('../fonts/SourceSans3-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('../fonts/SourceSans3-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('../fonts/SourceSans3-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+*:focus {
+  outline: none;
+  transition:
+    outline-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/*ГЛОБАЛЬНЫЙ ФОКУС ДЛЯ ВСЕХ ИНТЕРАКТИВНЫХ ЭЛЕМЕНТОВ */
+button,
+[role='button'],
+a,
+[tabindex] {
+  outline: 2px solid transparent;
+}
+
+button:focus-visible,
+[role='button']:focus-visible,
+a:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--focus-outline-color, var(--base-black));
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}

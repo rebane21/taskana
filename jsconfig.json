@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"]
+      },
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "Bundler",
+      "jsx": "preserve",
+      "allowJs": true,
+      "checkJs": false,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noEmit": true
+    },
+    "include": ["src/**/*", "vite.config.js"],
+    "exclude": ["node_modules", "dist"]
+  }

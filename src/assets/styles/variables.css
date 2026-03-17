@@ -26,6 +26,9 @@
   --color-hover-border: var(--light-neutral-600);
   --color-text-inverted: var(--light-neutral-0);
 
+  /* Focus outline color - по умолчанию для светлой темы */
+  --focus-outline-color: var(--base-black);
+
   /* Primary */
   --primary-0: #fff4f4;
   --primary-100: #ffcece;
@@ -36,6 +39,26 @@
   --primary-600: #760909;
 
   --primary-400-500: linear-gradient(to bottom, var(--color-primary-400), var(--color-primary-500));
+
+  --color-filling-primary: var(--primary-0);
+  --color-hover-priority: var(--primary-100);
+  --color-controls-borders-pressed: var(--primary-300);
+  --color-primary-default: var(--primary-400);
+  --color-controls-borders-hover: var(--primary-500);
+
+  /* secondary light */
+  --secondary-0: #f5f0ff;
+  --secondary-100: #eadfff;
+  --secondary-200: #d9c5ff;
+  --secondary-300: #b792ff;
+  --secondary-400: #741cff;
+  --secondary-500: #581bcc;
+
+  --color-filling: var(--secondary-0);
+  --color-hover-secondary:  var(--secondary-100);
+  --color-boarder-secondary: var(--secondary-300);
+  --color-secondary-default: var(--secondary-400);
+  --color-boarder-hover-secondary: var(--secondary-500);
 
   /* Base */
   --base-white: #ffffff;
@@ -50,10 +73,10 @@
   --light-sm-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
   --light-sm-hover: 0px 8px 12px 0px rgba(0, 0, 0, 0.2);
 
-  --dark-base-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
-  --dark-base-hover: 0px 8px 12px 0px rgba(0, 0, 0, 0.8);
-  --dark-sm-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
-  --dark-sm-hover: 0px 8px 12px 0px rgba(0, 0, 0, 0.6);
+  --shadow-base-default:var(--light-base-default);
+  --shadow-base-hover:var(--light-base-hover);
+  --shadow-sm-default:var(--light-sm-default);
+  --shadow-sm-hover: var(--light-sm-hover);
 
   /* Typography */
   --font-regular: 400;
@@ -61,7 +84,7 @@
   --font-bold: 700;
 }
 
-.dark {
+[data-theme='dark'] {
   /* нейтральные цвета для темной темы */
   --dark-neutral-0: #141414;
   --dark-neutral-100: #1c1c1c;
@@ -88,6 +111,49 @@
   --color-hover-list: var(--dark-neutral-200);
   --color-hover-border: var(--dark-neutral-600);
   --color-text-inverted: var(--dark-neutral-0);
+
+  /* Primary dark */
+  --primary-0: #300b0b;
+  --primary-100: #461313;
+  --primary-200: #760909;
+  --primary-300: #a60c0c;
+  --primary-400: #d51010;
+  --primary-500: #f25959;
+
+  --color-filling-primary: var(--primary-0);
+  --color-hover-priority: var(--primary-100);
+  --color-controls-borders-pressed: var(--primary-300);
+  --color-primary-default: var(--primary-400);
+  --color-controls-borders-hover: var(--primary-500);
+
+  /* secondary dark */
+  --secondary-0: #261c3c;
+  --secondary-100: #3d2a66;
+  --secondary-200: #5d38ae;
+  --secondary-300: #7d45ea;
+  --secondary-400: #9d6aff;
+  --secondary-500: #b792ff;
+
+  --color-filling: var(--secondary-0);
+  --color-boarder-secondary: var(--secondary-300);
+  --color-secondary-default: var(--secondary-400);
+  --color-boarder-hover-secondary: var(--secondary-500);
+
+    /* Shadows */
+ 
+    --dark-base-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    --dark-base-hover: 0px 8px 12px 0px rgba(0, 0, 0, 0.8);
+    --dark-sm-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+    --dark-sm-hover: 0px 8px 12px 0px rgba(0, 0, 0, 0.6);
+  
+    --shadow-base-default:var(--dark-base-default);
+    --shadow-base-hover:var(--dark-base-hover);
+    --shadow-sm-default:var(--dark-sm-default);
+    --shadow-sm-hover: var(--dark-sm-hover);
+
+
+  /* Focus outline color - для темной темы */
+  --focus-outline-color: var(--base-white);
 }
 .heading_h1 {
   font-weight: var(--font-bold);
@@ -107,14 +173,14 @@
   line-height: 1.5rem;
 }
 
-.body__lg_semibold {
-  font-weight: var(--font-semibold);
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-}
 
 .body__lg_regular {
   font-weight: var(--font-regular);
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+.body__lg_bold {
+  font-weight: var(--font-bold);
   font-size: 1.125rem;
   line-height: 1.5rem;
 }
@@ -128,6 +194,11 @@
 .body__md_semibold {
   font-weight: var(--font-semibold);
   font-size: 1rem;
+  line-height: 1.5rem;
+}
+.body__lg_semibold {
+  font-weight: var(--font-semibold);
+  font-size: 1.125rem;
   line-height: 1.5rem;
 }
 

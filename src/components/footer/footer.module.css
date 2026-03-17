@@ -5,3 +5,12 @@
   background-color: var(--color-bg-primary);
   color: var(--color-text-secondary);
 }
+
+.footerContent a {
+  color: var(--color-text-secondary);
+}
+
+.footerContent a:hover,
+.footerContent a:focus-visible {
+  color: var(--color-text-primary);
+}

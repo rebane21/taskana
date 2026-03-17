@@ -10,6 +10,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  --focus-outline-color: var(--base-white);
 }
 
 .btn_text {
@@ -25,4 +26,8 @@
   width: 218px;
   height: 40px;
   gap: 24px;
+}
+
+.header a:focus-visible {
+  outline-offset: 6px;
 }
