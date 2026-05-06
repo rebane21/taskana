@@ -1,6 +1,7 @@
-import Button from '../button/Button';
-import { useTheme } from '../../hooks/useTheme';
-import Icon from '../icon/Icon';
+import Button from '@/components/button/Button';
+import { useTheme } from '@/hooks/useTheme';
+import Icon from '@/components/icon/Icon';
+import { clsx } from '@/utils/clsx';
 import styles from './themeSwitcher.module.css';
 
 export const ThemeSwitcher = () => {
@@ -11,25 +12,15 @@ export const ThemeSwitcher = () => {
       variant="dark"
       className={styles.themeSwitcher}
       onClick={toggleTheme}
-      aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
+      aria-label={`Переключить на ${isDark ? 'светлую' : 'тёмную'} тему`}
     >
-      <div className={styles.container}>
-        <Icon
-          name="SunIcon"
-          size={16}
-          className={styles.icon}
-          showWrapper={true}
-          wrapperSize={32}
-          wrapperClassName={`${styles.iconWrapper} ${!isDark ? styles.active : ''}`}
-        />
-        <Icon
-          name="MoonIcon"
-          size={16}
-          className={styles.icon}
-          showWrapper={true}
-          wrapperSize={32}
-          wrapperClassName={`${styles.iconWrapper} ${isDark ? styles.active : ''}`}
-        />
+      <div className={clsx(styles.switcher, isDark && styles.moonActive)}>
+        <div className={styles.iconWrapper}>
+          <Icon name="SunIcon" className={styles.icon} />
+        </div>
+        <div className={styles.iconWrapper}>
+          <Icon name="MoonIcon" className={styles.icon} />
+        </div>
       </div>
     </Button>
   );

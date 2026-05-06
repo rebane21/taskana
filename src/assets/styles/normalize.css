@@ -2,21 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease,
-    fill 0.2s ease,
-    stroke 0.2s ease;
 }
 
 html,
 body {
   height: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   min-width: 1280px;
-  font-family: 'Source Sans 3', sans-serif;
-  font-weight: var(--font-regular);
 }
 
 ul,
@@ -42,11 +34,6 @@ select {
   background: none;
   font: inherit;
   outline: none;
-}
-
-input:focus-visible{
-  outline-offset: 0px;
-  box-shadow: none;
 }
 
 img {

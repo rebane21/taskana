@@ -1,6 +1,6 @@
-import CreatedTask from '../ceatedTask/CreatedTask';
-import Illustration from '../illustration';
-import { useTasks } from '../../hooks/useTasks';
+import TaskItems from '@/components/taskItems/TaskItems';
+import Illustration from '@/components/illustration';
+import { useTasks } from '@/hooks/useTasks';
 import styles from './taskList.module.css';
 
 const TaskList = () => {
@@ -8,9 +8,9 @@ const TaskList = () => {
 
   if (tasks && tasks.length > 0) {
     return (
-      <section className={styles.taskList}>
-        <CreatedTask />
-      </section>
+      <article className={styles.taskList}>
+        <TaskItems />
+      </article>
     );
   } else {
     return (

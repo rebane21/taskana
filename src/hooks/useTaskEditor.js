@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { TaskEditorContext } from '../context/taskEditorContext';
+import { TaskEditorContext } from '@/context/taskEditorContext';
 
 export const useTaskEditor = () => {
   const context = useContext(TaskEditorContext);

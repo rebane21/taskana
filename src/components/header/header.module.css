@@ -30,4 +30,19 @@
 
 .header a:focus-visible {
   outline-offset: 6px;
+  box-shadow: none;
+}
+
+.iconWrapper {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+  color: var(--base-white);
 }

@@ -1,9 +1,10 @@
 import styles from './button.module.css';
-import { clsx } from '../../utils/clsx.js';
-import Icon from '../icon/Icon';
+import { clsx } from '@/utils/clsx.js';
+import Icon from '@/components/icon/Icon';
 
 const Button = ({
   children,
+  type = 'button',
   variant = 'primary',
   size = 'medium',
   disabled = false,
@@ -13,7 +14,7 @@ const Button = ({
 }) => {
   return (
     <button
-      type="button"
+      type={type}
       className={clsx(
         styles.button,
         styles[`variant-${variant}`],

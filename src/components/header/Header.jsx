@@ -1,8 +1,8 @@
-import Button from '../button/Button';
-import Icon from '../icon/Icon';
-import Logo from '../logo/Logo';
-import { ThemeSwitcher } from '../themeSwither/ThemeSwitcher';
-import { useTaskEditor } from '../../hooks/useTaskEditor';
+import Button from '@/components/button/Button';
+import Icon from '@/components/icon/Icon';
+import Logo from '@/components/logo/Logo';
+import { ThemeSwitcher } from '@/components/themeSwither/ThemeSwitcher';
+import { useTaskEditor } from '@/hooks/useTaskEditor';
 import styles from './header.module.css';
 
 const Header = () => {
@@ -15,7 +15,9 @@ const Header = () => {
       </a>
       <div className={styles.headerActions}>
         <Button onClick={open}>
-          <Icon name="PlusIcon" showWrapper={true} color="var(--base-white)" />
+          <div className={styles.iconWrapper}>
+            <Icon name="PlusIcon" className={styles.icon} />
+          </div>
           <Button.Text>Создать</Button.Text>
         </Button>
         <ThemeSwitcher />

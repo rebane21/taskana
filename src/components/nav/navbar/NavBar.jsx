@@ -1,5 +1,5 @@
 import styles from './navBar.module.css';
-import NavItem from '../navItem/NavItem';
+import NavItem from '@/components/nav/navItem/NavItem';
 const NavBar = () => {
   return (
     <nav className={styles.navBar}>

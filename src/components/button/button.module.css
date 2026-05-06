@@ -7,7 +7,12 @@
   border-radius: 8px;
   cursor: pointer;
 
-  transition: all 0.2s ease-in-out;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast),
+    opacity var(--transition-fast);
   text-decoration: none;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.2);
   gap: 8px;
@@ -19,24 +24,24 @@
   width: fit-content;
   height: fit-content;
   min-height: 40px;
-  min-width: 108px;
+  min-width: 118px;
 
   padding: 8px 16px 8px 12px;
 }
 
 .button.variant-primary:hover:not(:disabled) {
-  background-color: var(--primary-500);
+  background-color: #a60c0c;
 }
 
 .button.variant-primary:disabled {
-  background-color: rgba(213, 16, 16, 0.5);
+  background-color: var(--primary-200);
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .button.variant-primary:focus-visible {
-  background-color: var(--primary-500);
+  background-color: #a60c0c;
 }
 
 .button.variant-primary:active:not(:disabled) {
@@ -88,6 +93,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.button.variant-priority:focus:not(:focus-visible) {
+  outline: none;
 }
 
 

@@ -1,0 +1,18 @@
+.modalFooter {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-top: 1px solid var(--color-bg-hover-secondary);
+  padding: 16px 24px;
+  gap: 24px;
+  position: sticky;
+  bottom: 0;
+  background-color: var(--color-bg-layout);
+  z-index: 3;
+}
+
+.modalActions {
+  display: flex;
+  height: 48px;
+  gap: 16px;
+}

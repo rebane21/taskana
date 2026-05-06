@@ -1,37 +1,49 @@
 .navItem {
-  background-color: var(--color-text-primary);
   width: 100%;
   min-width: 172px;
-  height: 40px;
-  padding: 8px;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  list-style: none;
 }
 
-.navItem * {
+.navLink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  gap: 8px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-text-primary);
+  color: var(--color-text-inverted);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navLink * {
   color: var(--color-text-inverted);
 }
 
-.navItem a {
-  display: inline-flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  gap: 8px;
-  justify-content: start;
-}
-
-.navItem:hover:not(:disabled) {
+.navLink:hover {
   background-color: var(--color-bg-hover-primary);
-  border-color: var(--color-bg-hover-primary);
 }
 
-.navItem:focus-visible {
+.navLink:focus-visible {
   outline: 2px solid var(--color-text-primary);
   background-color: var(--color-bg-hover-primary);
-  border-color: var(--color-bg-hover-primary);
+}
+
+.iconWrapper {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 18px;
+  height: 15px;
 }

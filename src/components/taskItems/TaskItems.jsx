@@ -1,8 +1,8 @@
-import { useTasks } from '../../hooks/useTasks';
-import { clsx } from '../../utils/clsx';
-import styles from './createdTask.module.css';
+import { useTasks } from '@/hooks/useTasks';
+import { clsx } from '@/utils/clsx';
+import styles from './taskItems.module.css';
 
-const CreatedTask = () => {
+const TaskItems = () => {
   const { tasks, toggleTask } = useTasks();
 
   const sortedTasks = tasks.slice().reverse();
@@ -25,7 +25,7 @@ const CreatedTask = () => {
 
             <div className={styles.textArea}>
               <label htmlFor={`task-${task.id}`} className={clsx(styles.label, 'body__lg_regular')}>
-                {task.text}
+                {task.title}
               </label>
             </div>
           </div>
@@ -34,4 +34,5 @@ const CreatedTask = () => {
     </ul>
   );
 };
-export default CreatedTask;
+
+export default TaskItems;

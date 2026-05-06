@@ -1,9 +1,17 @@
+.incomingTasksWrapper {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  background-color: var(--color-bg-primary);
+}
+
 .incomingTasksContainer {
   display: flex;
   flex-direction: column;
   min-width: 676px;
-  flex: 1;
+  max-width: 996px;
+  width: 100%;
+  margin: 0 auto;
   height: 100%;
-  background-color: var(--color-bg-layout);
-
+  background-color: var(--color-bg-primary);
 }

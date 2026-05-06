@@ -1,17 +1,21 @@
 import { useState } from 'react';
-import { TasksContext } from '../context/tasksContext';
+import { TasksContext } from '@/context/tasksContext';
+import { generateId } from '@/utils/generateId';
 
 const TasksProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
 
   const addTask = (taskData) => {
-    setTasks([...tasks, { ...taskData, id: Date.now(), completed: false }]);
+    const now = new Date().toISOString();
+    setTasks([...tasks, { ...taskData, id: generateId(), completed: false, createdAt: now, updatedAt: now }]);
   };
 
   const toggleTask = (taskId) => {
     setTasks(
       tasks.map((task) =>
-        task.id === taskId ? { ...task, completed: !task.completed } : task
+        task.id === taskId
+          ? { ...task, completed: !task.completed, updatedAt: new Date().toISOString() }
+          : task
       )
     );
   };

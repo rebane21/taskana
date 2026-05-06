@@ -1,5 +1,5 @@
-import TaskList from '../tasklist/TaskList';
-import { clsx } from '../../utils/clsx';
+import TaskList from '@/components/tasklist/TaskList';
+import { clsx } from '@/utils/clsx';
 import styles from './mainContainer.module.css';
 
 const MainContainer = () => {

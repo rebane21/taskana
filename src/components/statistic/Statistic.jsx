@@ -1,4 +1,4 @@
-import Illustration from '../illustration';
+import Illustration from '@/components/illustration';
 import styles from './statistic.module.css';
 
 const Statistic = () => {

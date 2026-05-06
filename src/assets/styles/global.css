@@ -1,6 +1,25 @@
 @import './variables.css';
 @import './normalize.css';
 
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: var(--font-regular);
+}
+
+* {
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    fill var(--transition-fast),
+    stroke var(--transition-fast);
+}
+
+input:focus-visible {
+  outline-offset: 0;
+  box-shadow: none;
+}
+
 @font-face {
   font-family: 'Source Sans 3';
   src: url('../fonts/SourceSans3-Regular.woff2') format('woff2');
@@ -28,11 +47,10 @@
 *:focus {
   outline: none;
   transition:
-    outline-color 0.2s ease,
-    border-color 0.2s ease;
+    outline-color var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
-/*ГЛОБАЛЬНЫЙ ФОКУС ДЛЯ ВСЕХ ИНТЕРАКТИВНЫХ ЭЛЕМЕНТОВ */
 button,
 [role='button'],
 a,
@@ -50,5 +68,5 @@ select:focus-visible,
   outline-offset: 2px;
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }

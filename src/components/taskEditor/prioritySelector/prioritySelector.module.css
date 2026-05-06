@@ -1,0 +1,72 @@
+.priority {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--color-text-primary);
+  gap: 17px;
+}
+
+.selectPriority {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-primary);
+}
+
+.priorityIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  scroll-margin-top: 212px;
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-radius var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.priorityMinus:hover:not(:disabled) {
+  background-color: var(--color-bg-hover-secondary);
+}
+
+.priorityMinus.active {
+  background-color: var(--color-bg-secondary);
+  box-shadow: var(--light-sm-default);
+  border-radius: 8px;
+}
+
+.priorityChevronTop:hover:not(:disabled) {
+  background-color: var(--color-hover-secondary);
+}
+
+.priorityChevronTop.active {
+  background-color: var(--color-filling);
+  box-shadow: var(--light-sm-default);
+  border-radius: 8px;
+}
+
+.priorityArrowTwo:hover:not(:disabled) {
+  background-color: var(--color-hover-priority);
+}
+
+.priorityArrowTwo.active {
+  background-color: var(--color-filling-primary);
+  box-shadow: var(--light-sm-default);
+  border-radius: 8px;
+}
+
+.icon {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+  transition: all var(--transition-fast);
+  color: var(--color-text-primary);
+}
+
+.priorityChevronTop .icon {
+  color: var(--color-secondary-default);
+}
+
+.priorityArrowTwo .icon {
+  color: var(--color-primary-default);
+}

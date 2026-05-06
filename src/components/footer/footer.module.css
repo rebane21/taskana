@@ -14,3 +14,8 @@
 .footerContent a:focus-visible {
   color: var(--color-text-primary);
 }
+
+.footerContent a:focus-visible {
+  border-radius: 4px;
+  box-shadow: none;
+}
