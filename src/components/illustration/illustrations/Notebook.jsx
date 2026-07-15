@@ -1,7 +1,7 @@
 const Notebook = ({
-  primaryColor = 'var(--color-bg-hover-primary)',
-  invertedColor = 'var(--color-bg-primary)',
-  secondaryColor = 'var(--color-bg-hover-secondary)',
+  primaryColor = 'var(--neutral-700)',
+  invertedColor = 'var(--neutral-0)',
+  secondaryColor = 'var(--neutral-300)',
   className = '',
   ...props
 }) => {

@@ -1,18 +1,14 @@
 import Button from '@/components/button/Button';
 import Icon from '@/components/icon/Icon';
+import { PRIORITY_KEY, PRIORITY_OPTIONS } from '@/constants/taskPriorities';
+import { FOCUS_RING } from '@/constants/focusRing';
 import { clsx } from '@/utils/clsx';
 import styles from './prioritySelector.module.css';
 
-const PRIORITIES = [
-  { id: 'Minus', icon: 'Minus' },
-  { id: 'ChevronTop', icon: 'ChevronTop' },
-  { id: 'ArrowTwo', icon: 'ArrowTwo' },
-];
-
 const PRIORITY_STYLE = {
-  Minus: styles.priorityMinus,
-  ChevronTop: styles.priorityChevronTop,
-  ArrowTwo: styles.priorityArrowTwo,
+  [PRIORITY_KEY.MINUS]: styles.priorityMinus,
+  [PRIORITY_KEY.CHEVRON_TOP]: styles.priorityChevronTop,
+  [PRIORITY_KEY.ARROW_TWO]: styles.priorityArrowTwo,
 };
 
 const PrioritySelector = ({ priority, onSelect }) => {
@@ -20,19 +16,22 @@ const PrioritySelector = ({ priority, onSelect }) => {
     <div className={styles.priority}>
       <p className="body__lg_bold">Приоритет</p>
       <div id="priority" className={styles.selectPriority}>
-        {PRIORITIES.map(({ id, icon }) => (
+        {PRIORITY_OPTIONS.map(({ key, icon, ariaLabel }) => (
           <Button
-            key={id}
+            key={key}
             variant="priority"
             type="button"
+            aria-label={ariaLabel}
+            aria-pressed={priority === key}
             className={clsx(
               styles.priorityIcon,
-              PRIORITY_STYLE[id],
-              priority === id && styles.active,
+              FOCUS_RING,
+              PRIORITY_STYLE[key],
+              priority === key && styles.active,
             )}
-            onClick={() => onSelect(id)}
+            onClick={() => onSelect(key)}
           >
-            <Icon name={icon} className={styles.icon} />
+            <Icon name={icon} className={styles.icon} aria-hidden />
           </Button>
         ))}
       </div>

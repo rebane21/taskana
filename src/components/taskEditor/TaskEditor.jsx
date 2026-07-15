@@ -5,7 +5,7 @@ import TaskTitleInput from './taskTitleInput/TaskTitleInput';
 import { useTaskForm } from '@/hooks/useTaskForm';
 import styles from './taskEditor.module.css';
 
-const TaskEditor = ({ isOpen, onClose }) => {
+const TaskEditor = ({ type = 'create', task = null, isTaskEditorOpen, onTaskEditorClose }) => {
   const {
     taskTitle,
     setTaskTitle,
@@ -13,32 +13,38 @@ const TaskEditor = ({ isOpen, onClose }) => {
     setPriority,
     inputId,
     inputRef,
+    isSubmitDisabled,
     handleClose,
     handleClear,
     handleSubmit,
-  } = useTaskForm({ isOpen, onClose });
+    handleDelete,
+  } = useTaskForm({ type, task, isTaskEditorOpen, onTaskEditorClose });
+
+  const editorTitle = type === 'edit' ? 'Редактирование' : 'Создание задачи';
 
   return (
     <div
-      className={clsx(styles.taskEditor, isOpen && styles.open)}
+      className={clsx(styles.taskEditor, isTaskEditorOpen && styles.open)}
       role="dialog"
       aria-modal="true"
       aria-labelledby="task-editor-title"
-      aria-hidden={!isOpen}
+      aria-hidden={!isTaskEditorOpen}
     >
       <div className={styles.editorContent}>
         <div className={styles.scrollContainer}>
           <div className={styles.editorHeader}>
             <h1 id="task-editor-title" className="heading_h1">
-              Создание задачи
+              {editorTitle}
             </h1>
             <form id="task-form" className={styles.form} onSubmit={handleSubmit}>
               <TaskTitleInput
+                key={String(isTaskEditorOpen)}
                 inputId={inputId}
                 inputRef={inputRef}
                 taskTitle={taskTitle}
                 onChange={setTaskTitle}
                 onClear={handleClear}
+                autoFocus={isTaskEditorOpen}
               />
             </form>
           </div>
@@ -48,7 +54,12 @@ const TaskEditor = ({ isOpen, onClose }) => {
          </div>
         </div>
 
-        <ModalFooter isSubmitDisabled={!taskTitle.trim()} onClose={handleClose} />
+        <ModalFooter
+          type={type}
+          isSubmitDisabled={isSubmitDisabled}
+          onClose={handleClose}
+          onDelete={handleDelete}
+        />
       </div>
     </div>
   );

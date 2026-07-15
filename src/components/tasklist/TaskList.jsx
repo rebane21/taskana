@@ -1,6 +1,6 @@
 import TaskItems from '@/components/taskItems/TaskItems';
 import Illustration from '@/components/illustration';
-import { useTasks } from '@/hooks/useTasks';
+import { useTasks } from '@/contexts/tasks/tasksContext';
 import styles from './taskList.module.css';
 
 const TaskList = () => {

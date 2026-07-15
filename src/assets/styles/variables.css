@@ -1,33 +1,19 @@
 :root {
-  /* Основные нейтральные цвета */
-  --light-neutral-0: #ffffff;
-  --light-neutral-100: #fbfbfb;
-  --light-neutral-200: #f3f3f3;
-  --light-neutral-300: #ececec;
-  --light-neutral-400: #bfbfbf;
-  --light-neutral-500: #8c8c8c;
-  --light-neutral-600: #6c6c6c;
-  --light-neutral-700: #393939;
-  --light-neutral-800: #1c1c1c;
-  --light-neutral-900: #141414;
+ 
+  --neutral-0: #ffffff;
+  --neutral-100: #fbfbfb;
+  --neutral-200: #f3f3f3;
+  --neutral-300: #ececec;
+  --neutral-400: #bfbfbf;
+  --neutral-500: #8c8c8c;
+  --neutral-600: #6c6c6c;
+  --neutral-700: #393939;
+  --neutral-800: #1c1c1c;
+  --neutral-900: #141414;
 
-  --color-bg-primary: var(--light-neutral-0);
-  --color-bg-layout: var(--light-neutral-100);
-  --color-bg-secondary: var(--light-neutral-200);
-  --color-bg-hover-secondary: var(--light-neutral-300);
-  --color-border-default: var(--light-neutral-400);
-  --color-icon-default: var(--light-neutral-500);
-  --color-text-secondary: var(--light-neutral-600);
-  --color-bg-hover-primary: var(--light-neutral-700);
-  --color-text-primary: var(--light-neutral-800);
-  --color-bg-inverted: var(--light-neutral-900);
 
-  --color-hover-list: var(--light-neutral-200);
-  --color-hover-border: var(--light-neutral-600);
-  --color-text-inverted: var(--light-neutral-0);
-
-  /* Focus outline color - по умолчанию для светлой темы */
   --focus-outline-color: var(--base-black);
+  --focus-gap-bg: var(--neutral-0);
 
   /* Primary */
   --primary-0: #fff4f4;
@@ -38,13 +24,7 @@
   --primary-500: #a60c0c;
   --primary-600: #760909;
 
-  --primary-400-500: linear-gradient(to bottom, var(--color-primary-400), var(--color-primary-500));
-
-  --color-filling-primary: var(--primary-0);
-  --color-hover-priority: var(--primary-100);
-  --color-controls-borders-pressed: var(--primary-300);
-  --color-primary-default: var(--primary-400);
-  --color-controls-borders-hover: var(--primary-500);
+  --primary-400-500: linear-gradient(to bottom, var(--primary-400), var(--primary-500));
 
   /* secondary light */
   --secondary-0: #f5f0ff;
@@ -54,12 +34,6 @@
   --secondary-400: #741cff;
   --secondary-500: #581bcc;
 
-  --color-filling: var(--secondary-0);
-  --color-hover-secondary:  var(--secondary-100);
-  --color-boarder-secondary: var(--secondary-300);
-  --color-secondary-default: var(--secondary-400);
-  --color-boarder-hover-secondary: var(--secondary-500);
-
   /* Base */
   --base-white: #ffffff;
   --base-600: #6c6c6c;
@@ -67,21 +41,19 @@
   --base-900: #141414;
   --base-black: #000000;
 
-  /* Shadows */
-  --light-base-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
-  --light-base-hover: 0px 8px 12px 0px rgba(0, 0, 0, 0.25);
-  --light-sm-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
-  --light-sm-hover: 0px 8px 12px 0px rgba(0, 0, 0, 0.2);
-
-  --shadow-base-default:var(--light-base-default);
-  --shadow-base-hover:var(--light-base-hover);
-  --shadow-sm-default:var(--light-sm-default);
-  --shadow-sm-hover: var(--light-sm-hover);
+  --shadow-lg: 0 0 12px 4px rgba(0, 0, 0, 0.1);
+  --shadow-base-default: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  --shadow-base-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.25);
+  --shadow-sm-default: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
+  --shadow-sm-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.2);
+  --shadow-sm-hover-idle: 2px 8px 12px 0 rgba(0, 0, 0, 0);
 
   /* Icon sizes */
   --icon-size-sm: 16px;
   --icon-size-md: 18px;
   --icon-size-lg: 24px;
+  --icon-wrapper-size: var(--icon-size-lg);
+  --switcher-icon-wrapper-size: 32px;
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -94,32 +66,17 @@
 }
 
 [data-theme='dark'] {
-  /* нейтральные цвета для темной темы */
-  --dark-neutral-0: #141414;
-  --dark-neutral-100: #1c1c1c;
-  --dark-neutral-200: #262626;
-  --dark-neutral-300: #333333;
-  --dark-neutral-400: #6c6c6c;
-  --dark-neutral-500: #8c8c8c;
-  --dark-neutral-600: #bfbfbf;
-  --dark-neutral-700: #ececec;
-  --dark-neutral-800: #fbfbfb;
-  --dark-neutral-900: #ffffff;
 
-  --color-bg-primary: var(--dark-neutral-0);
-  --color-bg-layout: var(--dark-neutral-100);
-  --color-bg-secondary: var(--dark-neutral-200);
-  --color-bg-hover-secondary: var(--dark-neutral-300);
-  --color-border-default: var(--dark-neutral-400);
-  --color-icon-default: var(--dark-neutral-500);
-  --color-text-secondary: var(--dark-neutral-600);
-  --color-bg-hover-primary: var(--dark-neutral-700);
-  --color-text-primary: var(--dark-neutral-800);
-  --color-bg-inverted: var(--dark-neutral-900);
-
-  --color-hover-list: var(--dark-neutral-200);
-  --color-hover-border: var(--dark-neutral-600);
-  --color-text-inverted: var(--dark-neutral-0);
+  --neutral-0: #141414;
+  --neutral-100: #1c1c1c;
+  --neutral-200: #262626;
+  --neutral-300: #333333;
+  --neutral-400: #6c6c6c;
+  --neutral-500: #8c8c8c;
+  --neutral-600: #bfbfbf;
+  --neutral-700: #ececec;
+  --neutral-800: #fbfbfb;
+  --neutral-900: #ffffff;
 
   /* Primary dark */
   --primary-0: #300b0b;
@@ -129,12 +86,6 @@
   --primary-400: #d51010;
   --primary-500: #f25959;
 
-  --color-filling-primary: var(--primary-0);
-  --color-hover-priority: var(--primary-100);
-  --color-controls-borders-pressed: var(--primary-300);
-  --color-primary-default: var(--primary-400);
-  --color-controls-borders-hover: var(--primary-500);
-
   /* secondary dark */
   --secondary-0: #261c3c;
   --secondary-100: #3d2a66;
@@ -143,26 +94,11 @@
   --secondary-400: #9d6aff;
   --secondary-500: #b792ff;
 
-  --color-filling: var(--secondary-0);
-  --color-boarder-secondary: var(--secondary-300);
-  --color-secondary-default: var(--secondary-400);
-  --color-boarder-hover-secondary: var(--secondary-500);
-
-    /* Shadows */
- 
-    --dark-base-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
-    --dark-base-hover: 0px 8px 12px 0px rgba(0, 0, 0, 0.8);
-    --dark-sm-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
-    --dark-sm-hover: 0px 8px 12px 0px rgba(0, 0, 0, 0.6);
-  
-    --shadow-base-default:var(--dark-base-default);
-    --shadow-base-hover:var(--dark-base-hover);
-    --shadow-sm-default:var(--dark-sm-default);
-    --shadow-sm-hover: var(--dark-sm-hover);
-
-
-  /* Focus outline color - для темной темы */
-  --focus-outline-color: var(--base-white);
+  --shadow-base-default: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  --shadow-base-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.8);
+  --shadow-sm-default: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  --shadow-sm-hover: 0 8px 12px 0 rgba(0, 0, 0, 0.6);
+  --shadow-sm-hover-idle: 0 8px 12px 0 rgba(0, 0, 0, 0);
 }
 .heading_h1 {
   font-weight: var(--font-bold);

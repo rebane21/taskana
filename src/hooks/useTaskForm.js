@@ -1,51 +1,94 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
-import { useTasks } from '@/hooks/useTasks';
+import { useTasks } from '@/contexts/tasks/tasksContext';
+import {
+  DEFAULT_PRIORITY_KEY,
+  PRIORITY_KEY,
+  PRIORITY_TO_NUMERIC,
+  NUMERIC_TO_PRIORITY_KEY,
+} from '@/constants/taskPriorities';
 import { generateId } from '@/utils/generateId';
 
-const PRIORITY_MAP = { Minus: 1, ChevronTop: 2, ArrowTwo: 3 };
-
-export const useTaskForm = ({ isOpen, onClose }) => {
-  const { addTask } = useTasks();
+export const useTaskForm = ({ type = 'create', task = null, isTaskEditorOpen, onTaskEditorClose }) => {
+  const { addTask, updateTask, deleteTask } = useTasks();
+  const isEdit = type === 'edit';
   const [taskTitle, setTaskTitle] = useState('');
-  const [priority, setPriority] = useState('Minus');
+  const [priority, setPriority] = useState(DEFAULT_PRIORITY_KEY);
   const inputId = useRef(`task-title-${generateId()}`);
   const inputRef = useRef(null);
 
   const reset = useCallback(() => {
     setTaskTitle('');
-    setPriority('Minus');
+    setPriority(DEFAULT_PRIORITY_KEY);
   }, []);
+
+  useEffect(() => {
+    if (!isTaskEditorOpen) return;
+
+    if (isEdit && task) {
+      setTaskTitle(task.title);
+      setPriority(NUMERIC_TO_PRIORITY_KEY[task.priority] ?? DEFAULT_PRIORITY_KEY);
+    } else {
+      setTaskTitle('');
+      setPriority(DEFAULT_PRIORITY_KEY);
+    }
+  }, [isTaskEditorOpen, isEdit, task]);
 
   const handleClose = useCallback(() => {
     reset();
-    onClose();
-  }, [onClose, reset]);
+    onTaskEditorClose();
+  }, [onTaskEditorClose, reset]);
 
   const handleClear = () => {
     setTaskTitle('');
     inputRef.current?.focus();
   };
 
+  const handleDelete = () => {
+    if (isEdit && task) {
+      deleteTask(task.id);
+    }
+    reset();
+    onTaskEditorClose();
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!taskTitle.trim()) return;
 
-    const now = new Date().toISOString();
-    addTask({
-      id: generateId(),
-      title: taskTitle.trim(),
-      priority: PRIORITY_MAP[priority],
-      createdAt: now,
-      updatedAt: now,
-      completed: false,
-    });
+    if (isEdit && task) {
+      updateTask(task.id, {
+        title: taskTitle.trim(),
+        priority: PRIORITY_TO_NUMERIC[priority],
+      });
+    } else {
+      const now = new Date().toISOString();
+      addTask({
+        id: generateId(),
+        title: taskTitle.trim(),
+        priority: PRIORITY_TO_NUMERIC[priority],
+        createdAt: now,
+        updatedAt: now,
+        completed: false,
+      });
+    }
 
     reset();
-    onClose();
+    inputRef.current?.blur();
+    onTaskEditorClose();
   };
 
+  const trimmedTitle = taskTitle.trim();
+
+  const isUnchanged =
+    isEdit &&
+    task &&
+    trimmedTitle === task.title &&
+    PRIORITY_TO_NUMERIC[priority] === task.priority;
+
+  const isSubmitDisabled = !trimmedTitle || isUnchanged;
+
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isTaskEditorOpen) return;
 
     const dialog = inputRef.current?.closest('[role="dialog"]');
     const handleTransitionEnd = (e) => {
@@ -64,7 +107,7 @@ export const useTaskForm = ({ isOpen, onClose }) => {
       dialog?.removeEventListener('transitionend', handleTransitionEnd);
       document.removeEventListener('keydown', handleEscape);
     };
-  }, [isOpen, handleClose]);
+  }, [isTaskEditorOpen, handleClose]);
 
   return {
     taskTitle,
@@ -73,8 +116,10 @@ export const useTaskForm = ({ isOpen, onClose }) => {
     setPriority,
     inputId: inputId.current,
     inputRef,
+    isSubmitDisabled,
     handleClose,
     handleClear,
     handleSubmit,
+    handleDelete,
   };
 };

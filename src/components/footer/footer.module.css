@@ -1,21 +1,30 @@
 .footerContent {
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   padding: 16px 24px;
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-secondary);
+  border-radius: 4px;
+  background-color: var(--neutral-0);
+  color: var(--neutral-600);
+}
+
+.footerText {
+  display: flex;
+  gap: 1px;
+  padding-top: 0;
 }
 
 .footerContent a {
-  color: var(--color-text-secondary);
+  color: var(--neutral-600);
+  padding: 0 2px;
+  border-radius: 4px;
 }
 
 .footerContent a:hover,
 .footerContent a:focus-visible {
-  color: var(--color-text-primary);
+  color: var(--neutral-800);
 }
 
 .footerContent a:focus-visible {
-  border-radius: 4px;
   box-shadow: none;
 }

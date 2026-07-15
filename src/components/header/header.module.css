@@ -5,18 +5,19 @@
   width: 100%;
 
   background-color: var(--base-black);
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
 
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-shrink: 0;
   --focus-outline-color: var(--base-white);
 }
 
 .btn_text {
   font-weight: var(--font-semibold);
-  font-size: var(--font-size-md);
-  line-height: var(--line-height-lg);
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   width: 58px;
 }
 
@@ -28,21 +29,56 @@
   gap: 24px;
 }
 
-.header a:focus-visible {
-  outline-offset: 6px;
-  box-shadow: none;
-}
-
-.iconWrapper {
-  width: var(--icon-size-lg);
-  height: var(--icon-size-lg);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .icon {
   width: var(--icon-size-md);
   height: var(--icon-size-md);
   color: var(--base-white);
+}
+
+.header a {
+  outline: 2px solid transparent;
+  outline-offset: 6px;
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 4px transparent,
+    var(--shadow-sm-hover-idle);
+  transition:
+    outline-color var(--transition-fast),
+    outline-offset var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.header a:focus-visible {
+  outline-color: var(--base-white);
+  box-shadow: 0 0 0 4px var(--base-black), var(--shadow-sm-hover);
+  position: relative;
+  z-index: 2;
+}
+
+.header button {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow:
+    var(--shadow-base-default),
+    0 0 0 2px transparent,
+    var(--shadow-sm-hover-idle);
+  transition:
+    outline-color var(--transition-fast),
+    outline-offset var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.header button:focus-visible:not(:disabled),
+.header button:focus-visible:not(:disabled):hover {
+  outline-color: var(--base-white);
+  box-shadow:
+    var(--shadow-base-default),
+    0 0 0 2px var(--base-black),
+    var(--shadow-sm-hover);
+  position: relative;
+  z-index: 2;
 }

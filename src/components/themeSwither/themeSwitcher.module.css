@@ -12,11 +12,11 @@
   position: absolute;
   top: 50%;
   left: 0;
-  width: 32px;
-  height: 32px;
+  width: var(--switcher-icon-wrapper-size);
+  height: var(--switcher-icon-wrapper-size);
   border-radius: 4px;
   background-color: var(--primary-400);
-  box-shadow: var(--dark-base-default);
+  box-shadow: var(--shadow-base-default);
   transform: translateY(-50%);
   transition:
     left var(--transition-fast),
@@ -25,12 +25,12 @@
 }
 
 .switcher.moonActive::before {
-  left: calc(100% - 32px);
+  left: calc(100% - var(--switcher-icon-wrapper-size));
 }
 
 .iconWrapper {
-  width: 32px;
-  height: 32px;
+  width: var(--switcher-icon-wrapper-size);
+  height: var(--switcher-icon-wrapper-size);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: var(--color-text-primary);
+  color: var(--neutral-800);
   gap: 17px;
 }
 
@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-text-primary);
+  color: var(--neutral-800);
 }
 
 .priorityIcon {
@@ -21,52 +21,69 @@
   scroll-margin-top: 212px;
   transition:
     background-color var(--transition-fast),
-    box-shadow var(--transition-fast),
     border-radius var(--transition-fast),
     color var(--transition-fast);
 }
 
-.priorityMinus:hover:not(:disabled) {
-  background-color: var(--color-bg-hover-secondary);
+.priorityMinus:hover:not(:disabled){
+  background-color: var(--neutral-300);
+  box-shadow: 0 0 0 2px transparent, var(--shadow-sm-hover);
+}
+
+.priorityMinus:focus-visible:not(:disabled) {
+  background-color: var(--neutral-300);
 }
 
 .priorityMinus.active {
-  background-color: var(--color-bg-secondary);
-  box-shadow: var(--light-sm-default);
+  background-color: var(--neutral-200);
   border-radius: 8px;
 }
 
-.priorityChevronTop:hover:not(:disabled) {
-  background-color: var(--color-hover-secondary);
+.priorityMinus.active:not(:focus-visible) {
+  box-shadow: 0 0 0 2px transparent, var(--shadow-sm-default);
+}
+
+.priorityChevronTop:hover:not(:disabled),
+.priorityChevronTop:focus-visible:not(:disabled) {
+  background-color: var(--secondary-100);
+  box-shadow: 0 0 0 2px transparent, var(--shadow-sm-hover);
 }
 
 .priorityChevronTop.active {
-  background-color: var(--color-filling);
-  box-shadow: var(--light-sm-default);
+  background-color: var(--secondary-0);
   border-radius: 8px;
 }
 
-.priorityArrowTwo:hover:not(:disabled) {
-  background-color: var(--color-hover-priority);
+.priorityChevronTop.active:not(:focus-visible) {
+  box-shadow: 0 0 0 2px transparent, var(--shadow-sm-default);
+}
+
+.priorityArrowTwo:hover:not(:disabled),
+.priorityArrowTwo:focus-visible:not(:disabled) {
+  background-color: var(--primary-100);
+  box-shadow: 0 0 0 2px transparent, var(--shadow-sm-hover);
 }
 
 .priorityArrowTwo.active {
-  background-color: var(--color-filling-primary);
-  box-shadow: var(--light-sm-default);
+  background-color: var(--primary-0);
   border-radius: 8px;
+}
+
+.priorityArrowTwo.active:not(:focus-visible) {
+  box-shadow: 0 0 0 2px transparent, var(--shadow-sm-default);
 }
 
 .icon {
   width: var(--icon-size-lg);
   height: var(--icon-size-lg);
   transition: all var(--transition-fast);
-  color: var(--color-text-primary);
+  color: var(--neutral-800);
 }
 
 .priorityChevronTop .icon {
-  color: var(--color-secondary-default);
+  color: var(--secondary-400);
 }
 
 .priorityArrowTwo .icon {
-  color: var(--color-primary-default);
+  color: var(--primary-400);
 }

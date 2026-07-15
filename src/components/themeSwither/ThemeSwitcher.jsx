@@ -1,16 +1,17 @@
 import Button from '@/components/button/Button';
-import { useTheme } from '@/hooks/useTheme';
+import { THEME_DARK, useTheme } from '@/contexts/theme/themeContext';
 import Icon from '@/components/icon/Icon';
 import { clsx } from '@/utils/clsx';
 import styles from './themeSwitcher.module.css';
 
-export const ThemeSwitcher = () => {
-  const { isDark, toggleTheme } = useTheme();
+export const ThemeSwitcher = ({ className = '' }) => {
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === THEME_DARK;
 
   return (
     <Button
-      variant="dark"
-      className={styles.themeSwitcher}
+      variant="switch"
+      className={clsx(styles.themeSwitcher, className)}
       onClick={toggleTheme}
       aria-label={`Переключить на ${isDark ? 'светлую' : 'тёмную'} тему`}
     >

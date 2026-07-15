@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <nav className={styles.navBar}>
       <ul className={styles.navList}>
-        <NavItem href="/inbox" icon="BoxIcon" text="Входящие" />
+        <NavItem  href="/inbox" icon="BoxIcon" text="Входящие" />
       </ul>
     </nav>
   );

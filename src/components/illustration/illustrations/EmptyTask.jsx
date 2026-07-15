@@ -1,6 +1,6 @@
 const EmptyTask = ({
-  primaryColor = 'var(--color-bg-inverted)',
-  secondaryColor = 'var(--color-bg-hover-secondary)',
+  primaryColor = 'var(--neutral-900)',
+  secondaryColor = 'var(--neutral-300)',
   className = '',
   ...props
 }) => {

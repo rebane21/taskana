@@ -1,9 +1,39 @@
 @import './variables.css';
 @import './normalize.css';
 
+#root {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
 body {
   font-family: 'Source Sans 3', sans-serif;
   font-weight: var(--font-regular);
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.iconWrapper {
+  width: var(--icon-wrapper-size);
+  height: var(--icon-wrapper-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 * {
@@ -11,13 +41,9 @@ body {
     background-color var(--transition-fast),
     color var(--transition-fast),
     border-color var(--transition-fast),
+    outline-color var(--transition-fast),
     fill var(--transition-fast),
     stroke var(--transition-fast);
-}
-
-input:focus-visible {
-  outline-offset: 0;
-  box-shadow: none;
 }
 
 @font-face {
@@ -44,29 +70,59 @@ input:focus-visible {
   font-display: swap;
 }
 
-*:focus {
+*:focus:not(:focus-visible) {
   outline: none;
   transition:
     outline-color var(--transition-fast),
     border-color var(--transition-fast);
 }
 
+*:focus-visible {
+  outline: none;
+}
+
 button,
 [role='button'],
 a,
+textarea,
+select,
 [tabindex] {
-  outline: 2px solid transparent;
+  border-radius: 8px;
+  transition:
+    outline-color var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
-button:focus-visible,
-[role='button']:focus-visible,
-a:focus-visible,
-textarea:focus-visible,
-select:focus-visible,
-[tabindex]:focus-visible {
-  outline: 2px solid var(--focus-outline-color, var(--base-black));
+p {
+  padding-top: 1px;
+}
+
+.focus-ring.focus-ring {
+  outline: 2px solid transparent;
   outline-offset: 2px;
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  transition: all var(--transition-fast);
+  border: none;
+  box-sizing: border-box;
+  box-shadow:
+    0 0 0 2px transparent,
+    var(--shadow-sm-hover-idle);
+  transition:
+    outline-color var(--transition-fast),
+    outline-offset var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.focus-ring.focus-ring:focus-visible,
+button.focus-ring.focus-ring:focus-visible:not(:disabled),
+button.focus-ring.focus-ring:focus-visible:not(:disabled):hover,
+a.focus-ring.focus-ring:focus-visible,
+[tabindex].focus-ring.focus-ring:focus-visible,
+textarea.focus-ring.focus-ring:focus-visible,
+select.focus-ring.focus-ring:focus-visible,
+label.focus-ring.focus-ring:focus-visible,
+li.focus-ring.focus-ring:focus-visible {
+  position: relative;
+  outline-color: var(--neutral-900);
+  box-shadow: 0 0 0 2px var(--neutral-0), var(--shadow-sm-hover);
+  z-index: 2;
 }

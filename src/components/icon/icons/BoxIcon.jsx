@@ -1,4 +1,4 @@
-const BoxIcon = ({ primaryColor = 'var(--color-bg-primary)', className = '', ...props }) => {
+const BoxIcon = ({ primaryColor = 'var(--neutral-0)', className = '', ...props }) => {
   return (
     <svg
       viewBox="0 0 18 15"

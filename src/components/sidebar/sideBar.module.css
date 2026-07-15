@@ -1,11 +1,13 @@
 .sideBar {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
+  min-height: 0;
   width: 400px;
-  border-left: 1px solid var(--color-bg-hover-secondary);
+  border-left: 1px solid var(--neutral-300);
   padding: 24px;
 
-  background-color: var(--color-bg-layout);
+  background-color: var(--neutral-100);
 
   margin-left: auto;
   overflow-y: auto;

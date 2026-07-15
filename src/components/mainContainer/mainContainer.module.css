@@ -1,26 +1,57 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  min-width: 676px;
-  height: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: var(--neutral-0);
+}
+
+.mainScroll {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
   overflow-y: auto;
-  background-color: var(--color-bg-primary);
+  scrollbar-gutter: stable;
+}
+
+.mainInner {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: max(100%, min-content);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1600px) {
+  .mainInner {
+    max-width: 996px;
+    margin-inline: auto;
+  }
 }
 
 .tasksTitle {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 999;
-  background: var(--color-bg-primary);
-  width: 100%;
+  flex-shrink: 0;
+  background: var(--neutral-0);
 
-  padding: 24px;
+  padding: 24px 24px 20px 24px;
+  margin-bottom: 4px;
   gap: 24px;
   width: 100%;
-  height: auto;
-  min-height: 88px;
+  min-height: 84px;
 
-  color: var(--color-text-primary);
+  color: var(--neutral-800);
 }

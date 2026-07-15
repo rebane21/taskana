@@ -1,16 +1,23 @@
-import { useTasks } from '@/hooks/useTasks';
+import { useMemo } from 'react';
+import { useTasks } from '@/contexts/tasks/tasksContext';
+import { useTaskEditor } from '@/contexts/taskEditor/taskEditorContext';
+import { sortTasks } from '@/utils/sortTasks';
+import { FOCUS_RING } from '@/constants/focusRing';
 import { clsx } from '@/utils/clsx';
+import Button from '@/components/button/Button';
+import Icon from '@/components/icon/Icon';
 import styles from './taskItems.module.css';
 
 const TaskItems = () => {
-  const { tasks, toggleTask } = useTasks();
+  const { tasks, toggleTask, sortOption } = useTasks();
+  const { openEditTaskEditor } = useTaskEditor();
 
-  const sortedTasks = tasks.slice().reverse();
+  const sortedTasks = useMemo(() => sortTasks(tasks, sortOption), [tasks, sortOption]);
 
   return (
     <ul className={styles.list}>
       {sortedTasks.map((task) => (
-        <li key={task.id} className={styles.itemWrapper} tabIndex={0}>
+        <li key={task.id} className={clsx(styles.itemWrapper, FOCUS_RING)} tabIndex={0}>
           <div className={clsx(styles.item, task.completed && styles.completed)}>
             <div className={styles.checkboxArea}>
               <input
@@ -29,6 +36,15 @@ const TaskItems = () => {
               </label>
             </div>
           </div>
+          <Button
+            variant="iconSecondary"
+            type="button"
+            aria-label="Редактировать задачу"
+            className={FOCUS_RING}
+            onClick={() => openEditTaskEditor(task)}
+          >
+            <Icon name="Edit" width={24} height={24} />
+          </Button>
         </li>
       ))}
     </ul>

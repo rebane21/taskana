@@ -3,7 +3,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border: none;
   border-radius: 8px;
   cursor: pointer;
 
@@ -14,11 +13,11 @@
     border-color var(--transition-fast),
     opacity var(--transition-fast);
   text-decoration: none;
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
   gap: 8px;
 }
 
-.button.variant-primary {
+.button.variant-accent {
   background-color: var(--primary-400);
   color: white;
   width: fit-content;
@@ -29,32 +28,32 @@
   padding: 8px 16px 8px 12px;
 }
 
-.button.variant-primary:hover:not(:disabled) {
+.button.variant-accent:hover:not(:disabled) {
   background-color: #a60c0c;
 }
 
-.button.variant-primary:disabled {
+.button.variant-accent:disabled {
   background-color: var(--primary-200);
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
   cursor: not-allowed;
   pointer-events: none;
 }
 
-.button.variant-primary:focus-visible {
+.button.variant-accent:focus-visible {
   background-color: #a60c0c;
 }
 
-.button.variant-primary:active:not(:disabled) {
+.button.variant-accent:active:not(:disabled) {
   background-color: var(--primary-300);
 }
 
-.button.variant-primary.loading {
+.button.variant-accent.loading {
   background-color: var(--primary-300);
   justify-content: center;
   pointer-events: none;
 }
 
-.button.variant-primary.loading .spinIcon {
+.button.variant-accent.loading .spinIcon {
   animation: spin 1s linear infinite;
 }
 
@@ -67,29 +66,12 @@
   }
 }
 
-.button.variant-nav {
-  background-color: var(--color-text-primary);
-  color: var(--color-text-inverted);
-  justify-content: start;
-
-  width: 100%;
-  min-width: 172px;
-  height: fit-content;
-  min-height: 40px;
-  padding: 8px;
-}
-
-.button.variant-nav:hover:not(:disabled) {
-  background-color: var(--color-bg-hover-primary);
-  border-color: var(--color-bg-hover-primary);
-}
-
 .button.variant-priority {
   width: 40px;
   height: 40px;
   padding: 0;
   background: transparent;
-  box-shadow: none;
+  box-shadow: 0 0 0 2px transparent, 0 0 0 0 transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +82,7 @@
 }
 
 
-.button.variant-dark {
+.button.variant-switch {
   background-color: var(--base-800);
   color: var(--base-white);
   justify-content: start;
@@ -113,26 +95,50 @@
   gap: 4px;
 }
 
-.button.variant-secondary {
-  background-color: var(--color-text-primary);
-  color: var(--color-text-inverted);
+.button.variant-primary {
+  background-color: var(--neutral-800);
+  color: var(--neutral-0);
   justify-content: center;
 
-  width: fit-content;
+  /* width: fit-content; */
   min-width: 98px;
-  height: fit-content;
+  /* height: fit-content; */
   min-height: 48px;
   padding: 12px 16px;
+  
 }
 
-.button.variant-secondary:disabled {
-  background-color: color-mix(in srgb, var(--color-text-primary) 50%, transparent);
-  color: color-mix(in srgb, var(--color-bg-primary) 50%, transparent);;
+.button.variant-primary:hover:not(:disabled) {
+  background-color: var(--neutral-700);
 }
 
-.button.variant-tertiary {
-  background-color: var(--color-bg-secondary);
-  color: var(--color-text-primary);
+.button.variant-primary:focus-visible:not(:disabled) {
+  background-color: var(--neutral-700);
+
+}
+
+.button.variant-primary:active:not(:disabled) {
+  background-color: var(--neutral-600);
+}
+
+.button.variant-primary:disabled {
+  background-color: color-mix(in srgb, var(--neutral-800) 50%, transparent);
+  color: color-mix(in srgb, var(--neutral-0) 50%, transparent);
+}
+
+.button.variant-primary.loading {
+  background-color: var(--base-600);
+  justify-content: center;
+  pointer-events: none;
+}
+
+.button.variant-primary.loading .spinIcon {
+  animation: spin 1s linear infinite;
+}
+
+.button.variant-secondary {
+  background-color: var(--neutral-200);
+  color: var(--neutral-800);
   justify-content: center;
 
   width: fit-content;
@@ -140,4 +146,153 @@
   height: fit-content;
   min-height: 48px;
   padding: 12px 16px;
+}
+
+.button.variant-secondary:hover:not(:disabled) {
+  background-color: var(--neutral-300);
+}
+
+.button.variant-secondary:focus-visible:not(:disabled) {
+  background-color: var(--neutral-300);
+  
+}
+
+.button.variant-secondary:active:not(:disabled) {
+  background-color: var(--neutral-100);
+}
+
+.button.variant-secondary:disabled {
+  background-color: color-mix(in srgb, var(--neutral-300) 50%, transparent);
+  color: color-mix(in srgb, var(--neutral-0) 50%, transparent);
+}
+
+.button.variant-secondary.loading {
+  background-color: var(--base-100);
+  justify-content: center;
+  pointer-events: none;
+}
+
+.button.variant-secondary.loading .spinIcon {
+  animation: spin 1s linear infinite;
+}
+
+.button.variant-dropdown {
+  background-color: var(--neutral-200);
+  box-shadow: var(--shadow-sm-default);
+  color: var(--neutral-600);
+  justify-content: space-between;
+  width: fit-content;
+  height: 40px;
+  gap: 8px;
+  opacity: 1;
+  border-radius: 8px;
+  padding: 8px 8px 8px 12px;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.button.variant-dropdown:hover:not(:disabled) {
+  background-color: var(--neutral-300);
+  box-shadow: var(--shadow-sm-hover);
+}
+
+
+.button.variant-dropdown:disabled {
+  background-color: color-mix(in srgb, var(--neutral-300) 50%, transparent);
+  color: color-mix(in srgb, var(--neutral-0) 50%, transparent);
+}
+
+.button.variant-iconSecondary {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+  color: var(--neutral-600);
+  box-shadow: none;
+  background: transparent;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-radius var(--transition-fast);
+}
+
+.button.variant-iconSecondary:hover:not(:disabled) {
+  background-color: var(--neutral-300);
+  color: var(--neutral-800);
+  box-shadow: var(--shadow-sm-hover);
+
+}
+
+.button.variant-iconSecondary:focus-visible:not(:disabled) {
+  background-color: var(--neutral-300);
+  color: var(--neutral-800);
+}
+
+.button.variant-iconSecondary:active:not(:disabled) {
+  background-color: var(--neutral-100);
+  color: var(--neutral-600);
+}
+
+.button.variant-iconSecondary:disabled {
+  background-color: transparent;
+  color: color-mix(in srgb, var(--neutral-600) 50%, transparent);
+  box-shadow: none;
+}
+
+.button.variant-iconSecondary.loading .spinIcon {
+  animation: spin 1s linear infinite;  
+  background-color: var(--neutral-100);
+  color: var(--neutral-600);
+}
+
+.button.variant-iconNegative {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border-radius: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+  color: var(--primary-400);
+  box-shadow: var(--shadow-sm-default);
+  background: var(--neutral-200);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-radius var(--transition-fast);
+}
+
+.button.variant-iconNegative:hover:not(:disabled) {
+  background-color: var(--primary-400);
+  color: var(--neutral-0);
+  box-shadow: var(--shadow-sm-hover);
+}
+
+.button.variant-iconNegative:focus-visible:not(:disabled) {
+  background-color: var(--primary-400);
+  color: var(--neutral-0);
+}
+
+.button.variant-iconNegative:active:not(:disabled) {
+  background-color: var(--primary-300);
+  color: var(--neutral-0);
+}
+
+.button.variant-iconNegative:disabled {
+  background-color: var(--neutral-200);
+  color: color-mix(in srgb, var(--primary-400) 50%, transparent);
+  box-shadow: none;
+}
+
+.button.variant-iconNegative.loading .spinIcon {
+  animation: spin 1s linear infinite;
+  background-color: var(--primary-300);
+  color: var(--neutral-0);
 }

@@ -22,20 +22,20 @@
   align-items: flex-start;
   width: 100%;
   gap: 16px;
-  padding: 8px 0px;
+  padding: 8px 0;
   border-radius: 8px;
   transition: all var(--transition-fast);
 }
 
 .itemWrapper:hover {
-  background-color: var(--color-bg-layout);
-  border-color: var(--color-border-default);
+  background-color: var(--neutral-100);
+  border-color: var(--neutral-400);
   box-shadow: var(--shadow-sm-default);
 }
 
 .itemWrapper:focus-visible {
-  background-color: var(--color-bg-layout);
-  outline: 2px solid var(--color-bg-inverted);
+  background-color: var(--neutral-100);
+  outline: 2px solid var(--neutral-900);
   box-shadow: none;
   z-index: 1000;
 }
@@ -46,7 +46,7 @@
 
 .item.completed .label {
   text-decoration: line-through;
-  color: var(--color-text-secondary);
+  color: var(--neutral-600);
 }
 
 .textArea {
@@ -57,7 +57,7 @@
 }
 
 .label {
-  color: var(--color-text-primary);
+  color: var(--neutral-800);
   cursor: pointer;
   text-align: left;
   user-select: none;
@@ -82,8 +82,7 @@
   cursor: pointer;
   position: relative;
   transition: all var(--transition-fast);
-  margin: 0;
-  box-shadow: inset 0 0 0 1.5px var(--priority-color, var(--color-bg-secondary));
+  box-shadow: inset 0 0 0 1.5px var(--priority-color, var(--neutral-200));
 }
 
 .checkbox:checked::after {
@@ -99,70 +98,72 @@
 }
 
 .checkbox[data-priority='1'] {
-  box-shadow: inset 0 0 0 1.5px var(--color-border-default);
+  box-shadow: inset 0 0 0 1.5px var(--neutral-400);
 }
 
 .checkbox[data-priority='1']:hover {
-  box-shadow: inset 0 0 0 1.5px var(--color-text-primary);
+  box-shadow: inset 0 0 0 1.5px var(--neutral-800);
 }
 
 .checkbox[data-priority='1']:focus-visible {
-  outline: 4px solid var(--color-border-default);
-  box-shadow: inset 0 0 0 1.5px var(--color-text-primary);
+  outline: 4px solid var(--neutral-400);
+  
+  box-shadow: inset 0 0 0 1.5px var(--neutral-800);
 }
 
 .checkbox[data-priority='1']:checked {
-  background-color: var(--color-border-default);
-  box-shadow: inset 0 0 0 1.5px var(--color-border-default);
+  background-color: var(--neutral-400);
+  box-shadow: inset 0 0 0 1.5px var(--neutral-400);
 }
 
 .checkbox[data-priority='1']:checked:hover {
-  background-color: var(--color-text-primary);
-  box-shadow: inset 0 0 0 1.5px var(--color-text-primary);
+  background-color: var(--neutral-800);
+  box-shadow: inset 0 0 0 1.5px var(--neutral-800);
 }
 
 .checkbox[data-priority='2'] {
-  box-shadow: inset 0 0 0 1.5px var(--color-boarder-secondary);
+  box-shadow: inset 0 0 0 1.5px var(--secondary-300);
 }
 
 .checkbox[data-priority='2']:hover {
-  box-shadow: inset 0 0 0 1.5px var(--color-boarder-hover-secondary);
+  box-shadow: inset 0 0 0 1.5px var(--secondary-500);
 }
 
 .checkbox[data-priority='2']:focus-visible {
-  outline: 4px solid var(--color-hover-secondary);
-  box-shadow: inset 0 0 0 1.5px var(--color-boarder-hover-secondary);
+  outline: 4px solid var(--secondary-100);
+  box-shadow: inset 0 0 0 1.5px var(--secondary-500);
 }
 
 .checkbox[data-priority='2']:checked {
-  background-color: var(--color-hover-secondary);
-  box-shadow: inset 0 0 0 1.5px var(--color-hover-secondary);
+  background-color: var(--secondary-100);
+  box-shadow: inset 0 0 0 1.5px var(--secondary-100);
 }
 
 .checkbox[data-priority='2']:checked:hover {
-  background-color: var(--color-boarder-hover-secondary);
-  box-shadow: inset 0 0 0 1.5px var(--color-boarder-hover-secondary);
+  background-color: var(--secondary-500);
+  box-shadow: inset 0 0 0 1.5px var(--secondary-500);
 }
 
 .checkbox[data-priority='3'] {
-  box-shadow: inset 0 0 0 1.5px var(--color-controls-borders-pressed);
+  box-shadow: inset 0 0 0 1.5px var(--primary-300);
 }
 
 .checkbox[data-priority='3']:hover {
-  box-shadow: inset 0 0 0 1.5px var(--color-controls-borders-hover);
+  box-shadow: inset 0 0 0 1.5px var(--primary-500);
 }
 
 .checkbox[data-priority='3']:focus-visible {
-  outline: 4px solid var(--color-hover-priority);
-  box-shadow: inset 0 0 0 1.5px var(--color-controls-borders-hover);
+  outline: 4px solid var(--primary-100);
+  box-shadow: inset 0 0 0 1.5px var(--primary-500);
 }
 
 .checkbox[data-priority='3']:checked {
-  background-color: var(--color-hover-priority);
-  box-shadow: inset 0 0 0 1.5px var(--color-hover-priority);
+  background-color: var(--primary-100);
+  box-shadow: inset 0 0 0 1.5px var(--primary-100);
 }
 
 .checkbox[data-priority='3']:checked:hover {
-  background-color: var(--color-controls-borders-pressed);
-  box-shadow: inset 0 0 0 1.5px var(--color-controls-borders-pressed);
+  background-color: var(--primary-300);
+  box-shadow: inset 0 0 0 1.5px var(--primary-300);
 }
+

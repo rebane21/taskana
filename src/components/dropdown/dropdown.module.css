@@ -1,0 +1,96 @@
+.dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+.dropdownButton.unSelected {
+  color: var(--neutral-600);
+}
+
+.dropdownButton.selected {
+  color: var(--neutral-800);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 1000;
+  width: 211px;
+  padding: 4px;
+  gap: 4px;
+  border-radius: 8px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  background-color: var(--neutral-0);
+  box-shadow: var(--shadow-lg);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity var(--transition-fast),
+    visibility var(--transition-fast),
+    background-color var(--transition-fast),
+    outline-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.dropdownMenuOpen {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.optionsListTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 12px;
+  color: var(--neutral-800);
+}
+
+.optionsList {
+  gap: 4px;
+}
+
+.optionItem {
+  display: grid;
+  grid-template-columns: var(--icon-wrapper-size) 1fr var(--icon-wrapper-size);
+  align-items: center;
+  gap: 8px;
+  width: 203px;
+  min-height: 40px;
+  padding: 8px;
+  border-radius: 4px;
+  outline: 2px solid transparent;
+  outline-offset: 0;
+  color: var(--neutral-800);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    outline-color var(--transition-fast),
+    outline-offset var(--transition-fast);
+}
+
+.optionItem:hover,
+.optionItem:focus-visible {
+  background-color: var(--neutral-200);
+}
+
+.optionItem.optionItemSelected {
+  color: var(--neutral-800);
+  background-color: var(--neutral-200);
+}
+
+.optionText {
+  min-width: 0;
+}
+
+.buttonText {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -2,22 +2,24 @@ import IncomingTasks from '@/pages/incomingTasks/IncomingTasks';
 import NavBar from '@/components/nav/navbar/NavBar';
 import SideBar from '@/components/sidebar/SideBar';
 import TaskEditor from '@/components/taskEditor/TaskEditor';
-import TasksProvider from '@/providers/TasksProvider';
-import { useTaskEditor } from '@/hooks/useTaskEditor';
+import { useTaskEditor } from '@/contexts/taskEditor/taskEditorContext';
 import styles from './content.module.css';
 
 const Content = () => {
-  const { isOpen, close } = useTaskEditor();
+  const { isTaskEditorOpen, editorType, editingTask, closeTaskEditor } = useTaskEditor();
 
   return (
-    <main className={styles.mainContent}>
+    <div className={styles.mainContent}>
       <NavBar />
-      <TasksProvider>
       <IncomingTasks />
-        <TaskEditor isOpen={isOpen} onClose={close} />
-      </TasksProvider>
+      <TaskEditor
+        type={editorType}
+        task={editingTask}
+        isTaskEditorOpen={isTaskEditorOpen}
+        onTaskEditorClose={closeTaskEditor}
+      />
       <SideBar />
-    </main>
+    </div>
   );
 };
 export default Content;
