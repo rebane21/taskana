@@ -1,15 +1,13 @@
 import { useMemo } from 'react';
-import { useTasks } from '@/contexts/tasks/tasksContext';
-import { useTaskEditor } from '@/contexts/taskEditor/taskEditorContext';
-import { sortTasks } from '@/utils/sortTasks';
-import { FOCUS_RING } from '@/constants/focusRing';
-import { clsx } from '@/utils/clsx';
-import Button from '@/components/button/Button';
-import Icon from '@/components/icon/Icon';
+import { useTasks, useTaskEditor, useTaskSort } from '@/contexts';
+import { sortTasks, clsx } from '@/utils';
+import { FOCUS_RING } from '@/constants';
+import { Button, Icon } from '@/components';
 import styles from './taskItems.module.css';
 
-const TaskItems = () => {
-  const { tasks, toggleTask, sortOption } = useTasks();
+export const TaskItems = () => {
+  const { tasks, toggleTask } = useTasks();
+  const { sortOption } = useTaskSort();
   const { openEditTaskEditor } = useTaskEditor();
 
   const sortedTasks = useMemo(() => sortTasks(tasks, sortOption), [tasks, sortOption]);
@@ -17,7 +15,7 @@ const TaskItems = () => {
   return (
     <ul className={styles.list}>
       {sortedTasks.map((task) => (
-        <li key={task.id} className={clsx(styles.itemWrapper, FOCUS_RING)} tabIndex={0}>
+        <li key={task.id} className={clsx(styles.itemWrapper, FOCUS_RING)}>
           <div className={clsx(styles.item, task.completed && styles.completed)}>
             <div className={styles.checkboxArea}>
               <input
@@ -40,7 +38,7 @@ const TaskItems = () => {
             variant="iconSecondary"
             type="button"
             aria-label="Редактировать задачу"
-            className={FOCUS_RING}
+            className={clsx(styles.editButton, FOCUS_RING)}
             onClick={() => openEditTaskEditor(task)}
           >
             <Icon name="Edit" width={24} height={24} />
@@ -50,5 +48,3 @@ const TaskItems = () => {
     </ul>
   );
 };
-
-export default TaskItems;

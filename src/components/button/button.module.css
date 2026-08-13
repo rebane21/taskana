@@ -71,7 +71,9 @@
   height: 40px;
   padding: 0;
   background: transparent;
-  box-shadow: 0 0 0 2px transparent, 0 0 0 0 transparent;
+  box-shadow:
+    0 0 0 2px transparent,
+    0 0 0 0 transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -80,7 +82,6 @@
 .button.variant-priority:focus:not(:focus-visible) {
   outline: none;
 }
-
 
 .button.variant-switch {
   background-color: var(--base-800);
@@ -99,13 +100,9 @@
   background-color: var(--neutral-800);
   color: var(--neutral-0);
   justify-content: center;
-
-  /* width: fit-content; */
   min-width: 98px;
-  /* height: fit-content; */
   min-height: 48px;
   padding: 12px 16px;
-  
 }
 
 .button.variant-primary:hover:not(:disabled) {
@@ -114,7 +111,6 @@
 
 .button.variant-primary:focus-visible:not(:disabled) {
   background-color: var(--neutral-700);
-
 }
 
 .button.variant-primary:active:not(:disabled) {
@@ -154,7 +150,6 @@
 
 .button.variant-secondary:focus-visible:not(:disabled) {
   background-color: var(--neutral-300);
-  
 }
 
 .button.variant-secondary:active:not(:disabled) {
@@ -200,7 +195,6 @@
   box-shadow: var(--shadow-sm-hover);
 }
 
-
 .button.variant-dropdown:disabled {
   background-color: color-mix(in srgb, var(--neutral-300) 50%, transparent);
   color: color-mix(in srgb, var(--neutral-0) 50%, transparent);
@@ -227,7 +221,6 @@
   background-color: var(--neutral-300);
   color: var(--neutral-800);
   box-shadow: var(--shadow-sm-hover);
-
 }
 
 .button.variant-iconSecondary:focus-visible:not(:disabled) {
@@ -247,7 +240,7 @@
 }
 
 .button.variant-iconSecondary.loading .spinIcon {
-  animation: spin 1s linear infinite;  
+  animation: spin 1s linear infinite;
   background-color: var(--neutral-100);
   color: var(--neutral-600);
 }

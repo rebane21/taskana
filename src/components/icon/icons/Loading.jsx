@@ -1,4 +1,4 @@
-const Loading = ({ color, className, ...props }) => {
+export const Loading = ({ color, className, ...props }) => {
   return (
     <svg
       width="15"
@@ -19,5 +19,3 @@ const Loading = ({ color, className, ...props }) => {
     </svg>
   );
 };
-
-export default Loading;

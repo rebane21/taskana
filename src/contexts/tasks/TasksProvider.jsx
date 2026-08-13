@@ -1,48 +1,51 @@
-import { useState } from 'react';
-import { TasksContext } from '@/contexts/tasks/tasksContext';
-import { DEFAULT_SORT_OPTION_ID } from '@/constants/dropdownOptions';
-import { generateId } from '@/utils/generateId';
+import { useReducer } from 'react';
+import { TasksContext } from './tasksContext';
+import { generateId } from '@/utils';
 
-const TasksProvider = ({ children }) => {
-  const [tasks, setTasks] = useState([]);
-  const [sortOption, setSortOption] = useState(DEFAULT_SORT_OPTION_ID);
+const ADD_TASK = 'addTask';
+const TOGGLE_TASK = 'toggleTask';
+const UPDATE_TASK = 'updateTask';
+const DELETE_TASK = 'deleteTask';
 
-  const addTask = (taskData) => {
-    const now = new Date().toISOString();
-    setTasks([...tasks, { ...taskData, id: generateId(), completed: false, createdAt: now, updatedAt: now }]);
-  };
-
-  const toggleTask = (taskId) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === taskId
+const tasksReducer = (tasks, action) => {
+  switch (action.type) {
+    case ADD_TASK: {
+      const now = new Date().toISOString();
+      return [
+        ...tasks,
+        { ...action.payload, id: generateId(), completed: false, createdAt: now, updatedAt: now },
+      ];
+    }
+    case TOGGLE_TASK:
+      return tasks.map((task) =>
+        task.id === action.payload
           ? { ...task, completed: !task.completed, updatedAt: new Date().toISOString() }
-          : task
-      )
-    );
-  };
+          : task,
+      );
+    case UPDATE_TASK:
+      return tasks.map((task) =>
+        task.id === action.payload.taskId
+          ? { ...task, ...action.payload.updates, updatedAt: new Date().toISOString() }
+          : task,
+      );
+    case DELETE_TASK:
+      return tasks.filter((task) => task.id !== action.payload);
+    default:
+      return tasks;
+  }
+};
 
-  const updateTask = (taskId, updates) => {
-    setTasks((prevTasks) =>
-      prevTasks.map((task) =>
-        task.id === taskId
-          ? { ...task, ...updates, updatedAt: new Date().toISOString() }
-          : task
-      )
-    );
-  };
+export const TasksProvider = ({ children }) => {
+  const [tasks, dispatch] = useReducer(tasksReducer, []);
 
-  const deleteTask = (taskId) => {
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
-  };
+  const addTask = (taskData) => dispatch({ type: ADD_TASK, payload: taskData });
+  const toggleTask = (taskId) => dispatch({ type: TOGGLE_TASK, payload: taskId });
+  const updateTask = (taskId, updates) => dispatch({ type: UPDATE_TASK, payload: { taskId, updates } });
+  const deleteTask = (taskId) => dispatch({ type: DELETE_TASK, payload: taskId });
 
   return (
-    <TasksContext
-      value={{ tasks, addTask, toggleTask, updateTask, deleteTask, sortOption, setSortOption }}
-    >
+    <TasksContext value={{ tasks, addTask, toggleTask, updateTask, deleteTask }}>
       {children}
     </TasksContext>
   );
 };
-
-export default TasksProvider;

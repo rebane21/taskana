@@ -1,8 +1,6 @@
-import Button from '@/components/button/Button';
-import Icon from '@/components/icon/Icon';
-import { PRIORITY_KEY, PRIORITY_OPTIONS } from '@/constants/taskPriorities';
-import { FOCUS_RING } from '@/constants/focusRing';
-import { clsx } from '@/utils/clsx';
+import { Button, Icon } from '@/components';
+import { PRIORITY_KEY, PRIORITY_OPTIONS, FOCUS_RING } from '@/constants';
+import { clsx } from '@/utils';
 import styles from './prioritySelector.module.css';
 
 const PRIORITY_STYLE = {
@@ -11,7 +9,7 @@ const PRIORITY_STYLE = {
   [PRIORITY_KEY.ARROW_TWO]: styles.priorityArrowTwo,
 };
 
-const PrioritySelector = ({ priority, onSelect }) => {
+export const PrioritySelector = ({ priority, onSelect }) => {
   return (
     <div className={styles.priority}>
       <p className="body__lg_bold">Приоритет</p>
@@ -38,5 +36,3 @@ const PrioritySelector = ({ priority, onSelect }) => {
     </div>
   );
 };
-
-export default PrioritySelector;

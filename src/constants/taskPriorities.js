@@ -13,9 +13,7 @@ export const PRIORITY_TO_NUMERIC = Object.freeze({
 });
 
 export const NUMERIC_TO_PRIORITY_KEY = Object.freeze(
-  Object.fromEntries(
-    Object.entries(PRIORITY_TO_NUMERIC).map(([key, value]) => [value, key]),
-  ),
+  Object.fromEntries(Object.entries(PRIORITY_TO_NUMERIC).map(([key, value]) => [value, key])),
 );
 
 export const PRIORITY_OPTIONS = Object.freeze([

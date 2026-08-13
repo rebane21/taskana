@@ -106,6 +106,8 @@ p {
     0 0 0 2px transparent,
     var(--shadow-sm-hover-idle);
   transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
     outline-color var(--transition-fast),
     outline-offset var(--transition-fast),
     box-shadow var(--transition-fast),
@@ -120,9 +122,12 @@ a.focus-ring.focus-ring:focus-visible,
 textarea.focus-ring.focus-ring:focus-visible,
 select.focus-ring.focus-ring:focus-visible,
 label.focus-ring.focus-ring:focus-visible,
-li.focus-ring.focus-ring:focus-visible {
+li.focus-ring.focus-ring:focus-visible,
+li.focus-ring.focus-ring:focus-within {
   position: relative;
   outline-color: var(--neutral-900);
-  box-shadow: 0 0 0 2px var(--neutral-0), var(--shadow-sm-hover);
+  box-shadow:
+    0 0 0 2px var(--neutral-0),
+    var(--shadow-sm-hover);
   z-index: 2;
 }

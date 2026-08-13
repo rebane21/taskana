@@ -1,5 +1,4 @@
 :root {
- 
   --neutral-0: #ffffff;
   --neutral-100: #fbfbfb;
   --neutral-200: #f3f3f3;
@@ -10,7 +9,6 @@
   --neutral-700: #393939;
   --neutral-800: #1c1c1c;
   --neutral-900: #141414;
-
 
   --focus-outline-color: var(--base-black);
   --focus-gap-bg: var(--neutral-0);
@@ -66,7 +64,6 @@
 }
 
 [data-theme='dark'] {
-
   --neutral-0: #141414;
   --neutral-100: #1c1c1c;
   --neutral-200: #262626;
@@ -117,7 +114,6 @@
   font-size: 1.125rem;
   line-height: 1.5rem;
 }
-
 
 .body__lg_regular {
   font-weight: var(--font-regular);

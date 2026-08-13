@@ -2,29 +2,24 @@ export const DEFAULT_SORT_OPTION_ID = 'created-at-desc';
 
 export const DROPDOWN_OPTIONS = [
   {
-    id: 'priority-asc',
+    id: 'priority-desc',
     label: 'Приоритету',
     iconName: 'FromUnimportant',
   },
   {
-    id: 'priority-desc',
+    id: 'priority-asc',
     label: 'Приоритету',
     iconName: 'OfImportance',
   },
   {
-    id: 'alphabet-asc',
+    id: 'alphabet-desc',
     label: 'Алфавиту',
     iconName: 'AZ',
   },
   {
-    id: 'alphabet-desc',
+    id: 'alphabet-asc',
     label: 'Алфавиту',
     iconName: 'ZA',
-  },
-  {
-    id: 'created-at-asc',
-    label: 'Дате создания',
-    iconName: 'ThreeOneOne',
   },
   {
     id: 'created-at-desc',
@@ -32,13 +27,18 @@ export const DROPDOWN_OPTIONS = [
     iconName: 'OneThreeOne',
   },
   {
-    id: 'updated-at-asc',
-    label: 'Дате обновления',
-    iconName: 'OldNew',
+    id: 'created-at-asc',
+    label: 'Дате создания',
+    iconName: 'ThreeOneOne',
   },
   {
     id: 'updated-at-desc',
     label: 'Дате обновления',
     iconName: 'NewOld',
+  },
+  {
+    id: 'updated-at-asc',
+    label: 'Дате обновления',
+    iconName: 'OldNew',
   },
 ];

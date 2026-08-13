@@ -50,7 +50,9 @@
 
 .header a:focus-visible {
   outline-color: var(--base-white);
-  box-shadow: 0 0 0 4px var(--base-black), var(--shadow-sm-hover);
+  box-shadow:
+    0 0 0 4px var(--base-black),
+    var(--shadow-sm-hover);
   position: relative;
   z-index: 2;
 }

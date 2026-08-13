@@ -1,8 +1,8 @@
-import Icon from '@/components/icon/Icon';
-import { FOCUS_RING } from '@/constants/focusRing';
+import { Icon } from '@/components';
+import { FOCUS_RING } from '@/constants';
 import styles from './navItem.module.css';
-import { clsx } from '@/utils/clsx.js';
-const NavItem = ({ href, icon, text }) => {
+import { clsx } from '@/utils';
+export const NavItem = ({ href, icon, text }) => {
   return (
     <li className={styles.navItem}>
       <a href={href} className={clsx(styles.navLink, FOCUS_RING)}>
@@ -14,4 +14,3 @@ const NavItem = ({ href, icon, text }) => {
     </li>
   );
 };
-export default NavItem;

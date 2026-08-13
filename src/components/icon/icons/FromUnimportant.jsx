@@ -1,4 +1,4 @@
-const FromUnimportant = ({
+export const FromUnimportant = ({
   primaryColor = 'var(--primary-400)',
   secondaryColor = 'var(--neutral-800)',
   className = '',
@@ -27,5 +27,3 @@ const FromUnimportant = ({
     </svg>
   );
 };
-
-export default FromUnimportant;

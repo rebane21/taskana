@@ -1,4 +1,4 @@
-const MoonIcon = ({ color, className = '', ...props }) => {
+export const MoonIcon = ({ color, className = '', ...props }) => {
   return (
     <svg
       viewBox="0 0 14 16"
@@ -14,5 +14,3 @@ const MoonIcon = ({ color, className = '', ...props }) => {
     </svg>
   );
 };
-
-export default MoonIcon;

@@ -1,15 +1,12 @@
-import Icon from '@/components/icon/Icon';
-import { FOCUS_RING } from '@/constants/focusRing';
-import { clsx } from '@/utils/clsx';
+import { Icon } from '@/components';
+import { FOCUS_RING } from '@/constants';
+import { clsx } from '@/utils';
 import styles from './taskTitleInput.module.css';
 
-const TaskTitleInput = ({ inputId, inputRef, taskTitle, onChange, onClear, autoFocus }) => {
+export const TaskTitleInput = ({ inputId, inputRef, taskTitle, onChange, onClear, autoFocus }) => {
   return (
     <div className={styles.formGroup}>
-      <label
-        htmlFor={inputId}
-        className={clsx('body__lg_bold', FOCUS_RING, styles.requiredLabel)}
-      >
+      <label htmlFor={inputId} className={clsx('body__lg_bold', FOCUS_RING, styles.requiredLabel)}>
         Название
       </label>
       <div className={styles.inputWrapper}>
@@ -38,5 +35,3 @@ const TaskTitleInput = ({ inputId, inputRef, taskTitle, onChange, onClear, autoF
     </div>
   );
 };
-
-export default TaskTitleInput;

@@ -1,4 +1,4 @@
-const PlusIcon = ({ color = 'white', className = '', ...props }) => {
+export const PlusIcon = ({ color = 'white', className = '', ...props }) => {
   return (
     <svg
       viewBox="0 0 18 18"
@@ -14,5 +14,3 @@ const PlusIcon = ({ color = 'white', className = '', ...props }) => {
     </svg>
   );
 };
-
-export default PlusIcon;

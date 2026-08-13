@@ -1,2 +1,2 @@
-export { default as EmptyTask } from './EmptyTask';
-export { default as Notebook } from './Notebook';
+export { EmptyTask } from './EmptyTask';
+export { Notebook } from './Notebook';

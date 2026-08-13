@@ -1,4 +1,4 @@
-const BoxIcon = ({ primaryColor = 'var(--neutral-0)', className = '', ...props }) => {
+export const BoxIcon = ({ primaryColor = 'var(--neutral-0)', className = '', ...props }) => {
   return (
     <svg
       viewBox="0 0 18 15"
@@ -14,5 +14,3 @@ const BoxIcon = ({ primaryColor = 'var(--neutral-0)', className = '', ...props }
     </svg>
   );
 };
-
-export default BoxIcon;

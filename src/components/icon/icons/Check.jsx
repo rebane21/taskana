@@ -1,4 +1,4 @@
-const Check = ({ color, className = '', ...props }) => {
+export const Check = ({ color, className = '', ...props }) => {
   return (
     <svg
       width="24"
@@ -18,5 +18,3 @@ const Check = ({ color, className = '', ...props }) => {
     </svg>
   );
 };
-
-export default Check;

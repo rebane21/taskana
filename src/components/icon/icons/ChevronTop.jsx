@@ -1,4 +1,4 @@
-const ChevronTop = ({ color, className = '', ...props }) => {
+export const ChevronTop = ({ color, className = '', ...props }) => {
   return (
     <svg
       width="24"
@@ -18,5 +18,3 @@ const ChevronTop = ({ color, className = '', ...props }) => {
     </svg>
   );
 };
-
-export default ChevronTop;

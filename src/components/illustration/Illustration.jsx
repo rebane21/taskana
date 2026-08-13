@@ -1,6 +1,6 @@
 import * as Illustrations from './illustrations';
 
-const Illustration = ({ name, className = '', ...props }) => {
+export const Illustration = ({ name, className = '', ...props }) => {
   const IllustrationComponent = Illustrations[name];
 
   if (!IllustrationComponent) {
@@ -10,4 +10,3 @@ const Illustration = ({ name, className = '', ...props }) => {
 
   return <IllustrationComponent className={className} {...props} />;
 };
-export default Illustration;

@@ -1,4 +1,4 @@
-const Filter = ({ secondaryColor = 'var(--neutral-800)', className = '', ...props }) => {
+export const Filter = ({ secondaryColor = 'var(--neutral-800)', className = '', ...props }) => {
   return (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} {...props}>
       <path
@@ -8,5 +8,3 @@ const Filter = ({ secondaryColor = 'var(--neutral-800)', className = '', ...prop
     </svg>
   );
 };
-
-export default Filter;

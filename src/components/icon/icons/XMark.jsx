@@ -1,4 +1,4 @@
-const XMark = ({ color, className = '', ...props }) => {
+export const XMark = ({ color, className = '', ...props }) => {
   return (
     <svg
       width="24"
@@ -18,5 +18,3 @@ const XMark = ({ color, className = '', ...props }) => {
     </svg>
   );
 };
-
-export default XMark;

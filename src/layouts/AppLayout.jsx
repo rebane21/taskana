@@ -1,22 +1,18 @@
-import Content from '@/components/content/Content';
-import Header from '@/components/header/Header';
-import TaskEditorProvider from '@/contexts/taskEditor/TaskEditorProvider';
-import TasksProvider from '@/contexts/tasks/TasksProvider';
-import ThemeProvider from '@/contexts/theme/ThemeProvider';
+import { Content, Header } from '@/components';
+import { TaskEditorProvider, TasksProvider, TaskSortProvider } from '@/contexts';
 import styles from './appLayout.module.css';
 
-const AppLayout = () => {
+export const AppLayout = () => {
   return (
     <section className={styles.appLayout}>
-      <ThemeProvider>
-        <TaskEditorProvider>
-          <TasksProvider>
+      <TaskEditorProvider>
+        <TasksProvider>
+          <TaskSortProvider>
             <Header />
             <Content />
-          </TasksProvider>
-        </TaskEditorProvider>
-      </ThemeProvider>
+          </TaskSortProvider>
+        </TasksProvider>
+      </TaskEditorProvider>
     </section>
   );
 };
-export default AppLayout;

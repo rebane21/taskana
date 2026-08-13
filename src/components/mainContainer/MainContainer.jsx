@@ -1,8 +1,7 @@
-import TaskList from '@/components/tasklist/TaskList';
+import { TaskList, Dropdown } from '@/components';
 import styles from './mainContainer.module.css';
-import Dropdown from '@/components/dropdown/Dropdown';
 
-const MainContainer = () => {
+export const MainContainer = () => {
   return (
     <main className={styles.mainContainer}>
       <div className={styles.mainScroll}>
@@ -18,4 +17,3 @@ const MainContainer = () => {
     </main>
   );
 };
-export default MainContainer;

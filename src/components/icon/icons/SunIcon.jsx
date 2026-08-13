@@ -1,4 +1,4 @@
-const SunIcon = ({ color, className = '', ...props }) => {
+export const SunIcon = ({ color, className = '', ...props }) => {
   return (
     <svg
       className={className}
@@ -14,5 +14,3 @@ const SunIcon = ({ color, className = '', ...props }) => {
     </svg>
   );
 };
-
-export default SunIcon;

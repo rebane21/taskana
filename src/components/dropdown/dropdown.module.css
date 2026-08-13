@@ -14,7 +14,7 @@
 .dropdownMenu {
   position: absolute;
   top: calc(100% + 8px);
-  left: 0;
+  right: 0;
   z-index: 1000;
   width: 211px;
   padding: 4px;
@@ -75,11 +75,6 @@
 
 .optionItem:hover,
 .optionItem:focus-visible {
-  background-color: var(--neutral-200);
-}
-
-.optionItem.optionItemSelected {
-  color: var(--neutral-800);
   background-color: var(--neutral-200);
 }
 

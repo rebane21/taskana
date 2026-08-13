@@ -1,18 +1,13 @@
-import Button from '@/components/button/Button';
-import Icon from '@/components/icon/Icon';
 import { useCallback, useId, useRef, useState } from 'react';
-import { DEFAULT_SORT_OPTION_ID, DROPDOWN_OPTIONS } from '@/constants/dropdownOptions';
-import { FOCUS_RING } from '@/constants/focusRing';
-import { useTasks } from '@/contexts/tasks/tasksContext';
-import { useDismiss } from '@/hooks/useDismiss';
-import { useToggle } from '@/hooks/useToggle';
-import { clsx } from '@/utils/clsx';
+import { Button, Icon } from '@/components';
+import { DEFAULT_SORT_OPTION_ID, DROPDOWN_OPTIONS, FOCUS_RING } from '@/constants';
+import { useTaskSort } from '@/contexts';
+import { useDismiss, useToggle } from '@/hooks';
+import { clsx } from '@/utils';
 import styles from './dropdown.module.css';
 
-const formatButtonLabel = (label) => label.charAt(0).toLowerCase() + label.slice(1);
-
-const Dropdown = () => {
-  const { sortOption, setSortOption } = useTasks();
+export const Dropdown = () => {
+  const { sortOption, setSortOption } = useTaskSort();
   const [isOpen, , closeDropdown, toggleDropdown] = useToggle(false);
   const [hasUserSelected, setHasUserSelected] = useState(false);
   const dropdownRef = useRef(null);
@@ -60,7 +55,11 @@ const Dropdown = () => {
       <Button
         ref={buttonRef}
         variant="dropdown"
-        className={clsx(styles.dropdownButton, FOCUS_RING, isCustomSort ? styles.selected : styles.unSelected)}
+        className={clsx(
+          styles.dropdownButton,
+          FOCUS_RING,
+          isCustomSort ? styles.selected : styles.unSelected,
+        )}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
         aria-controls={listboxId}
@@ -70,11 +69,10 @@ const Dropdown = () => {
           <Icon name={selectedOption?.iconName || 'OneThreeOne'} secondaryColor="currentColor" />
         </div>
         <Button.Text className={styles.buttonText}>
-          По {formatButtonLabel(selectedOption?.label || 'дате создания')}
+          По {(selectedOption?.label ?? 'дате создания').toLowerCase()}
         </Button.Text>
         <div className="iconWrapper">
-          <Icon name="ChevronBottom"
-          />
+          <Icon name="ChevronBottom" />
         </div>
       </Button>
       <div
@@ -87,14 +85,23 @@ const Dropdown = () => {
           </span>
           <span>Сортировка по:</span>
         </div>
-        <ul id={listboxId} className={styles.optionsList} role="listbox" aria-label="Сортировка задач">
+        <ul
+          id={listboxId}
+          className={styles.optionsList}
+          role="listbox"
+          aria-label="Сортировка задач"
+        >
           {DROPDOWN_OPTIONS.map(({ id, label, iconName }) => {
             const isSelected = sortOption === id;
 
             return (
               <li
                 key={id}
-                className={clsx(styles.optionItem, FOCUS_RING, isSelected && styles.optionItemSelected)}
+                className={clsx(
+                  styles.optionItem,
+                  FOCUS_RING,
+                  isSelected && styles.optionItemSelected,
+                )}
                 role="option"
                 aria-selected={isSelected}
                 tabIndex={isOpen ? 0 : -1}
@@ -116,5 +123,3 @@ const Dropdown = () => {
     </div>
   );
 };
-
-export default Dropdown;

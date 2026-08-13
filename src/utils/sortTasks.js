@@ -1,4 +1,4 @@
-import { DEFAULT_SORT_OPTION_ID } from '@/constants/dropdownOptions';
+import { DEFAULT_SORT_OPTION_ID } from '@/constants';
 
 const byTitle = (a, b) => a.title.localeCompare(b.title, 'ru', { sensitivity: 'base' });
 const byPriority = (a, b) => a.priority - b.priority;
@@ -8,10 +8,10 @@ const byUpdatedAt = (a, b) => new Date(a.updatedAt) - new Date(b.updatedAt);
 const reverse = (comparator) => (a, b) => comparator(b, a);
 
 const COMPARATORS = {
-  'priority-asc': byPriority,
-  'priority-desc': reverse(byPriority),
-  'alphabet-asc': byTitle,
-  'alphabet-desc': reverse(byTitle),
+  'priority-asc': reverse(byPriority),
+  'priority-desc': byPriority,
+  'alphabet-asc': reverse(byTitle),
+  'alphabet-desc': byTitle,
   'created-at-asc': byCreatedAt,
   'created-at-desc': reverse(byCreatedAt),
   'updated-at-asc': byUpdatedAt,

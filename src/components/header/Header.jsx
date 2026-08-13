@@ -1,11 +1,8 @@
-import Button from '@/components/button/Button';
-import Icon from '@/components/icon/Icon';
-import Logo from '@/components/logo/Logo';
-import { ThemeSwitcher } from '@/components/themeSwither/ThemeSwitcher';
-import { useTaskEditor } from '@/contexts/taskEditor/taskEditorContext';
+import { Button, Icon, Logo, ThemeSwitcher } from '@/components';
+import { useTaskEditor } from '@/contexts';
 import styles from './header.module.css';
 
-const Header = () => {
+export const Header = () => {
   const { openCreateTaskEditor } = useTaskEditor();
 
   return (
@@ -25,4 +22,3 @@ const Header = () => {
     </header>
   );
 };
-export default Header;

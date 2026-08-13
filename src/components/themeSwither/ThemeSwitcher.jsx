@@ -1,12 +1,10 @@
-import Button from '@/components/button/Button';
-import { THEME_DARK, useTheme } from '@/contexts/theme/themeContext';
-import Icon from '@/components/icon/Icon';
-import { clsx } from '@/utils/clsx';
+import { Button, Icon } from '@/components';
+import { useTheme } from '@/hooks';
+import { clsx } from '@/utils';
 import styles from './themeSwitcher.module.css';
 
 export const ThemeSwitcher = ({ className = '' }) => {
-  const { theme, toggleTheme } = useTheme();
-  const isDark = theme === THEME_DARK;
+  const { isDark, toggleTheme } = useTheme();
 
   return (
     <Button

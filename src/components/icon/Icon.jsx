@@ -1,6 +1,6 @@
 import * as Icons from './icons';
 
-const Icon = ({ name, className = '', ...props }) => {
+export const Icon = ({ name, className = '', ...props }) => {
   const IconComponent = Icons[name];
 
   if (!IconComponent) {
@@ -10,5 +10,3 @@ const Icon = ({ name, className = '', ...props }) => {
 
   return <IconComponent className={className} {...props} />;
 };
-
-export default Icon;

@@ -1,9 +1,8 @@
-import TaskItems from '@/components/taskItems/TaskItems';
-import Illustration from '@/components/illustration';
-import { useTasks } from '@/contexts/tasks/tasksContext';
+import { TaskItems, Illustration } from '@/components';
+import { useTasks } from '@/contexts';
 import styles from './taskList.module.css';
 
-const TaskList = () => {
+export const TaskList = () => {
   const { tasks } = useTasks();
 
   if (tasks && tasks.length > 0) {
@@ -24,4 +23,3 @@ const TaskList = () => {
     );
   }
 };
-export default TaskList;

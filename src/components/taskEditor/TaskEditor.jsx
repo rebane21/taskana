@@ -1,11 +1,16 @@
-import { clsx } from '@/utils/clsx';
-import ModalFooter from './modalFooter/ModalFooter';
-import PrioritySelector from './prioritySelector/PrioritySelector';
-import TaskTitleInput from './taskTitleInput/TaskTitleInput';
-import { useTaskForm } from '@/hooks/useTaskForm';
+import { clsx } from '@/utils';
+import { ModalFooter } from './modalFooter/ModalFooter';
+import { PrioritySelector } from './prioritySelector/PrioritySelector';
+import { TaskTitleInput } from './taskTitleInput/TaskTitleInput';
+import { useTaskForm } from '@/hooks';
 import styles from './taskEditor.module.css';
 
-const TaskEditor = ({ type = 'create', task = null, isTaskEditorOpen, onTaskEditorClose }) => {
+export const TaskEditor = ({
+  type = 'create',
+  task = null,
+  isTaskEditorOpen,
+  onTaskEditorClose,
+}) => {
   const {
     taskTitle,
     setTaskTitle,
@@ -51,7 +56,7 @@ const TaskEditor = ({ type = 'create', task = null, isTaskEditorOpen, onTaskEdit
 
           <div className={styles.content}>
             <PrioritySelector priority={priority} onSelect={setPriority} />
-         </div>
+          </div>
         </div>
 
         <ModalFooter
@@ -64,5 +69,3 @@ const TaskEditor = ({ type = 'create', task = null, isTaskEditorOpen, onTaskEdit
     </div>
   );
 };
-
-export default TaskEditor;

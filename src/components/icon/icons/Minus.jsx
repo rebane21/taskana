@@ -1,4 +1,4 @@
-const Minus = ({ color, className, ...props }) => {
+export const Minus = ({ color, className, ...props }) => {
   return (
     <svg
       width="24"
@@ -18,5 +18,3 @@ const Minus = ({ color, className, ...props }) => {
     </svg>
   );
 };
-
-export default Minus;

@@ -1,4 +1,4 @@
-const EmptyTask = ({
+export const EmptyTask = ({
   primaryColor = 'var(--neutral-900)',
   secondaryColor = 'var(--neutral-300)',
   className = '',
@@ -187,5 +187,3 @@ const EmptyTask = ({
     </svg>
   );
 };
-
-export default EmptyTask;

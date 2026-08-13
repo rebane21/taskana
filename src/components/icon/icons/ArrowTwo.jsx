@@ -1,4 +1,4 @@
-const ArrowTwo = ({ color, className = '', ...props }) => {
+export const ArrowTwo = ({ color, className = '', ...props }) => {
   return (
     <svg
       width="24"
@@ -18,5 +18,3 @@ const ArrowTwo = ({ color, className = '', ...props }) => {
     </svg>
   );
 };
-
-export default ArrowTwo;

@@ -6,9 +6,7 @@
   width: 400px;
   border-left: 1px solid var(--neutral-300);
   padding: 24px;
-
   background-color: var(--neutral-100);
-
   margin-left: auto;
   overflow-y: auto;
 }

@@ -1,4 +1,4 @@
-const Trash = ({ color, className, ...props }) => {
+export const Trash = ({ color, className, ...props }) => {
   return (
     <svg
       width="14"
@@ -16,5 +16,3 @@ const Trash = ({ color, className, ...props }) => {
     </svg>
   );
 };
-
-export default Trash;

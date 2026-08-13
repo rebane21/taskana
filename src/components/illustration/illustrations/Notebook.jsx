@@ -1,4 +1,4 @@
-const Notebook = ({
+export const Notebook = ({
   primaryColor = 'var(--neutral-700)',
   invertedColor = 'var(--neutral-0)',
   secondaryColor = 'var(--neutral-300)',
@@ -169,5 +169,3 @@ const Notebook = ({
     </svg>
   );
 };
-
-export default Notebook;

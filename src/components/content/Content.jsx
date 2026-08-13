@@ -1,11 +1,9 @@
-import IncomingTasks from '@/pages/incomingTasks/IncomingTasks';
-import NavBar from '@/components/nav/navbar/NavBar';
-import SideBar from '@/components/sidebar/SideBar';
-import TaskEditor from '@/components/taskEditor/TaskEditor';
-import { useTaskEditor } from '@/contexts/taskEditor/taskEditorContext';
+import { IncomingTasks } from '@/pages';
+import { NavBar, SideBar, TaskEditor } from '@/components';
+import { useTaskEditor } from '@/contexts';
 import styles from './content.module.css';
 
-const Content = () => {
+export const Content = () => {
   const { isTaskEditorOpen, editorType, editingTask, closeTaskEditor } = useTaskEditor();
 
   return (
@@ -22,4 +20,3 @@ const Content = () => {
     </div>
   );
 };
-export default Content;

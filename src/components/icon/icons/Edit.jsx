@@ -1,4 +1,4 @@
-const Edit = ({ color, className, ...props }) => {
+export const Edit = ({ color, className, ...props }) => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -14,5 +14,3 @@ const Edit = ({ color, className, ...props }) => {
     </svg>
   );
 };
-
-export default Edit;

@@ -9,4 +9,3 @@ export const useToggle = (initialValue = false) => {
 
   return [value, open, close, toggle];
 };
-

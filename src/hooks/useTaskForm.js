@@ -1,42 +1,66 @@
-import { useEffect, useState, useCallback, useRef } from 'react';
-import { useTasks } from '@/contexts/tasks/tasksContext';
-import {
-  DEFAULT_PRIORITY_KEY,
-  PRIORITY_KEY,
-  PRIORITY_TO_NUMERIC,
-  NUMERIC_TO_PRIORITY_KEY,
-} from '@/constants/taskPriorities';
-import { generateId } from '@/utils/generateId';
+import { useEffect, useReducer, useCallback, useRef } from 'react';
+import { useTasks } from '@/contexts';
+import { DEFAULT_PRIORITY_KEY, PRIORITY_TO_NUMERIC, NUMERIC_TO_PRIORITY_KEY } from '@/constants';
+import { generateId } from '@/utils';
 
-export const useTaskForm = ({ type = 'create', task = null, isTaskEditorOpen, onTaskEditorClose }) => {
+const SET_TITLE = 'setTitle';
+const SET_PRIORITY = 'setPriority';
+const RESET = 'reset';
+const POPULATE = 'populate';
+
+const initialFormState = { taskTitle: '', priority: DEFAULT_PRIORITY_KEY };
+
+const formReducer = (state, action) => {
+  switch (action.type) {
+    case SET_TITLE:
+      return { ...state, taskTitle: action.payload };
+    case SET_PRIORITY:
+      return { ...state, priority: action.payload };
+    case RESET:
+      return initialFormState;
+    case POPULATE:
+      return { taskTitle: action.payload.title, priority: action.payload.priority };
+    default:
+      return state;
+  }
+};
+
+export const useTaskForm = ({
+  type = 'create',
+  task = null,
+  isTaskEditorOpen,
+  onTaskEditorClose,
+}) => {
   const { addTask, updateTask, deleteTask } = useTasks();
   const isEdit = type === 'edit';
-  const [taskTitle, setTaskTitle] = useState('');
-  const [priority, setPriority] = useState(DEFAULT_PRIORITY_KEY);
+  const [{ taskTitle, priority }, dispatch] = useReducer(formReducer, initialFormState);
   const inputId = useRef(`task-title-${generateId()}`);
   const inputRef = useRef(null);
 
-  const reset = useCallback(() => {
-    setTaskTitle('');
-    setPriority(DEFAULT_PRIORITY_KEY);
-  }, []);
+  const setTaskTitle = (value) => dispatch({ type: SET_TITLE, payload: value });
+  const setPriority = (value) => dispatch({ type: SET_PRIORITY, payload: value });
+  const reset = () => dispatch({ type: RESET });
 
   useEffect(() => {
     if (!isTaskEditorOpen) return;
 
     if (isEdit && task) {
-      setTaskTitle(task.title);
-      setPriority(NUMERIC_TO_PRIORITY_KEY[task.priority] ?? DEFAULT_PRIORITY_KEY);
+      dispatch({
+        type: POPULATE,
+        payload: {
+          title: task.title,
+          priority: NUMERIC_TO_PRIORITY_KEY[task.priority] ?? DEFAULT_PRIORITY_KEY,
+        },
+      });
     } else {
-      setTaskTitle('');
-      setPriority(DEFAULT_PRIORITY_KEY);
+      dispatch({ type: RESET });
     }
   }, [isTaskEditorOpen, isEdit, task]);
 
   const handleClose = useCallback(() => {
-    reset();
+    dispatch({ type: RESET });
     onTaskEditorClose();
-  }, [onTaskEditorClose, reset]);
+  }, [onTaskEditorClose]);
 
   const handleClear = () => {
     setTaskTitle('');

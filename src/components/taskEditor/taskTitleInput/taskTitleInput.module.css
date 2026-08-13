@@ -41,8 +41,7 @@
 
 .input:focus,
 .textarea:focus {
- 
-  outline:2px solid var(--neutral-800);
+  outline: 2px solid var(--neutral-800);
   box-shadow: none;
   outline-offset: 2px;
 }

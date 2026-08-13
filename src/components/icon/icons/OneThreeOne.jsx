@@ -1,4 +1,4 @@
-const OneThreeOne = ({ secondaryColor = 'var(--neutral-800)', className = '', ...props }) => {
+export const OneThreeOne = ({ secondaryColor = 'var(--neutral-800)', className = '', ...props }) => {
   return (
     <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} {...props}>
       <path
@@ -22,5 +22,3 @@ const OneThreeOne = ({ secondaryColor = 'var(--neutral-800)', className = '', ..
     </svg>
   );
 };
-
-export default OneThreeOne;
